@@ -96,6 +96,57 @@ function constructTable(horizontal, vertical) {
 
 
 
+const gameState = {
+
+    card_1: {
+        tileColor: "",
+        tileWord: "",
+        flippedState: false,   
+    },
+    card_2: {},
+    card_3: {},
+    card_4: {},
+    card_5: {},
+    card_6: {},
+    card_7: {},
+    card_8: {},
+    card_9: {},
+    card_10: {},
+    card_11: {},
+    card_12: {},
+    card_13: {},
+    card_14: {},
+    card_15: {},
+    card_16: {},
+    card_17: {},
+    card_18: {},
+    card_19: {},
+    card_20: {},
+    card_21: {},
+    card_22: {},
+    card_23: {},
+    card_24: {},
+    card_25: {},
 
 
 
+    otherInfo: {
+        startingTeam:"",
+        currentTurn:"",
+        gameOver:false,
+        greenCardsLeft:50,
+        blueCardsLeft:50,
+        playerRole: "",
+        showColorSides:false,
+        showClueInputControls:false,
+    },
+
+    blueClueLog: {
+
+    },
+
+    greenClueLog: {
+
+    },
+
+}
