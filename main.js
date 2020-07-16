@@ -106,7 +106,6 @@ card_1.setAttribute('id','card_1');*/
 
 
 const gameState = {
-
     card_1: {
         "tileColor": "",
         "tileWord": "",
