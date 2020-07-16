@@ -13,6 +13,12 @@ function makeTable(horizontal = 10, vertical = 15) {
     tableVariable.innerHTML = constructTable(horizontal, vertical);
 }
 
+function testTan() {
+    for (i = 0; i<=25; i++) {
+        let tempTan = document.getElementById("card_"+i)
+        tempTan.setAttribute('class', 'tan');
+}
+
 function randomCardList() {
     let greenRemaining = 9
     let blueRemaining = 8
