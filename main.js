@@ -17,6 +17,7 @@ function testTan() {
     for (i = 0; i<=25; i++) {
         let tempTan = document.getElementById("card_"+i)
         tempTan.setAttribute('class', 'tan');
+    }
 }
 
 function randomCardList() {
@@ -104,7 +105,7 @@ for (i = 0; i<=25; i++) {
 card_1.setAttribute('class', 'tan');
 card_1.setAttribute('id','card_1');*/
 
-
+/*
 const gameState = {
     card_1: {
         "tileColor": "",
@@ -150,7 +151,7 @@ const gameState = {
     },
 
     blueClueLog: {
-
+        
     },
 
     greenClueLog: {
@@ -158,3 +159,4 @@ const gameState = {
     },
 
 }
+*/
