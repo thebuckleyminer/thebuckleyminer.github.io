@@ -76,7 +76,7 @@ function constructTable(horizontal, vertical) {
         for (j = vertical; j > 0; j--) {
             classColor = cardOrder[counter];
             counter += 1;
-            htmlOutput += "<td class=\"" + classColor + " square\"><div class=\"wordbox\">" + chooseAWord() + "</div></td>";        
+            htmlOutput += "<td class=\"" + classColor + " square\" id=\"card_"+counter+"\"><div class=\"wordbox\">" + chooseAWord() + "</div></td>";        
         }
         htmlOutput += "</tr>";
     }
@@ -85,23 +85,26 @@ function constructTable(horizontal, vertical) {
 }
 
 
+/*
+for (i = 0; i<=25; i++) {
+    console.log(i)
+}
 
 
+for (i = 0; i<=25; i++) {
+    console.log("card_"+i)
+}   
 
-
-
-
-
-
-
+card_1.setAttribute('class', 'tan');
+card_1.setAttribute('id','card_1');*/
 
 
 const gameState = {
 
     card_1: {
-        tileColor: "",
-        tileWord: "",
-        flippedState: false,   
+        "tileColor": "",
+        "tileWord": "",
+        "flippedState": false,   
     },
     card_2: {},
     card_3: {},
@@ -131,14 +134,14 @@ const gameState = {
 
 
     otherInfo: {
-        startingTeam:"",
-        currentTurn:"",
-        gameOver:false,
-        greenCardsLeft:50,
-        blueCardsLeft:50,
-        playerRole: "",
-        showColorSides:false,
-        showClueInputControls:false,
+        "startingTeam":"",
+        "currentTurn":"",
+        "gameOver":false,
+        "greenCardsLeft":50,
+        "blueCardsLeft":50,
+        "playerRole": "",
+        "showColorSides":false,
+        "showClueInputControls":false,
     },
 
     blueClueLog: {
