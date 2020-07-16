@@ -14,9 +14,9 @@ function makeTable(horizontal = 10, vertical = 15) {
 }
 
 function testTan() {
-    for (i = 0; i<=25; i++) {
+    for (var i = 1; i<26; i++) {
         let tempTan = document.getElementById("card_"+i)
-        tempTan.setAttribute('class', 'tan');
+        tempTan.setAttribute('class', 'tan square');
     }
 }
 
