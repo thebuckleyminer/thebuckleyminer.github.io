@@ -1,28 +1,22 @@
 
 .black {
     /* background-color: black; */
-    background-image: url("./Wilkinson_Assets/Asset 2.png");
+    background-image: url("Asset 2.png");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
 }
-.front {
-    /* background-color: blanchedalmond; */
-    background-image: url("./Wilkinson_Assets/Asset 1.png");
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
-}
+
 .tan {
     /* background-color: blanchedalmond; */
-    background-image: url("./Wilkinson_Assets/Asset 1.png");
+    background-image: url("Asset 1.png");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
 }
 .blue {
     /* background-color: #0078ff; */
-    background-image: url("./Wilkinson_Assets/Asset 3.png");
+    background-image: url("Asset 3.png");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
@@ -30,7 +24,7 @@
 }
 .green {
     /* background-color: #78b548; */
-    background-image: url("./Wilkinson_Assets/Asset 4.png");
+    background-image: url("Asset 4.png");
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
@@ -75,63 +69,8 @@ html {
 }
 
 .footerWaves{    
-    background-image: url("./Wilkinson_Assets/Asset waves.png");
+    background-image: url("Asset waves.png");
     background-position: bottom;
     background-repeat: no-repeat;
     height: 200px;
-}
-
-.splashScreenWhiteBorder{
-    border: solid 5px white
-}
-
-#game-description {
-    color: white; 
-    background-color: cornflowerblue;
-    border: solid 5px white;
-    padding:1.5%;
-    font-family: 'Open Sans', sans-serif;
-}
-#links-to-codenames{
-    font-family: 'Open Sans', sans-serif;
-    color: black;
-    background-color: white;
-}
-#links-to-codenames  a{
-    color:black;
-    text-decoration: none;
-}
-#links-to-codenames  a:hover{
-    color:#43464b;
-    text-decoration: underline;
-}
-#play-game {
-    font-family: 'Trade Winds', sans-serif;
-    margin: 5px auto;
-    color: white;
-    background-color: #ffc400;
-    text-align: center;
-    padding: 20px;
-    font-size: 2.25em;
-    border-radius: 50px;
-    width: 50%;
-}
-a:link, a:visited {
-    color:white;
-    text-decoration: none;
-}
-a:hover {
-    color: darkorange;
-    text-decoration: none;
-}
-img {max-width:45%;
-    height:auto;
-    border: solid 5px white;
-    margin: auto;
-    display: block;
-}
-
-.smallPadding{
-    padding-left: 3%;
-    
 }

@@ -1,52 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <Title>Game Description</Title>
-        <meta name="author" content="Wilkinson">
+        <Title>Wilkinson Pirate Game</Title>
         <meta charset="utf-8">
+        <meta name="Author" content="Christopher Wilkinson">
         <link rel="stylesheet" href="./style.css">
+        <script src="main.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet"> <!-- This is just a font from Google Fonts to make it look a little better-->
         <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="./Wilkinson_Assets/skull Page Icon.png">
+        <link rel="icon" type="image/png" href="./skull Page Icon.png">
     </head>
 
-    <body>
-        <div class="mainTitle whiteBorder smallPadding">
-            <h1>The Legend of Pirate Beach</h1>
+    <body onload="makeTable(5,5)">
+        <h1 class="center mainTitle">Reload page to generate new grid!</h1>
+        <div id="mainBlock">
+            <div id="assignment2Table">
+                My JavaScript should replace this text with a cool table!
+            </div>
         </div>
-
-        <div class="my-picture">
-            <img src="./Wilkinson_Assets/Christopher-Wilkinson-Beach-2018.jpg" alt="Christopher Wilkinson - Laguna Beach Photo - 2018">
-        </div>
-        
-        <div class="splashScreenWhiteBorder" id="game-description">
-            <h3>As plundering, pillaging, Pirates of the high seas ye have just discovered the treasure of all treasures! But alas, there is a problem! The treasure ye long sought after has an eight- or nine-word encryption key!</h3>
-            <p>In this fast paced guessing game players are placed into two teams. Each team has two roles: There is one Captain who will oversee, and the remaining scallywags constitute the crew.</p>
-            <p>The board consists of 25 cards. Each card has one of twenty-five possible treasure unlocking words. Each team has eight to nine cards that correspond to their password color. There is one Black card that if guessed counts as an immediate game over. The remaining are neutral cards.</p>
-            <p>The pirate crew for your team can only see what words are displayed on the cards, so it is up to the Captain to give necessary guidance to get ahold of the treasure.</p>
-            <p>The Captain’s special eyepatch ability is to see all the cards and their associated color values. He or she must give their crew clues to guess their own teams password words without choosing any wrong words.</p>
-            <p>Similar to a reverse battleship where you are trying to guide your team to hit what you intend.</p>
-            <p>Turns are taken between the teams and whoever gets all the words right breaks the encryption and gets the booty!</p>
-            <p>-More detailed instructions to come as game is made throughout the semester.</p>
-            <p>-This game is heavily based off of Codenames. I do not intend to make this public outside the scope of this class, nor do I strive to make any money off of it.</p>
-        </div>
-
-        <div class="splashScreenWhiteBorder"    id="links-to-codenames">
-            <h3>Links to official Codenames product and related info:</h3>
-            <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Codenames_(board_game)" target="_blank">Wikipedia of Codenames Board Game</a></li>
-                <li><a href="https://codenamesgame.com/" target="_blank">Company Webpage</a></li>
-                <li><a href="https://codenames.game/" target="_blank">Official online implementation</a></li>
-            </ul>
-        </div>
-
-        <div id="play-game">
-            <a href="./GameGrid.html">Play The Legend of Pirate Beach</a>
-        </div>
-
     </body>
+    <div class="footerWaves"></div>
 </html>
-
-
-
