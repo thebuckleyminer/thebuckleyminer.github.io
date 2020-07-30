@@ -13,6 +13,13 @@ function makeTable(horizontal = 10, vertical = 15) {
     tableVariable.innerHTML = constructTable(horizontal, vertical);
 }
 
+function testTan() {
+    for (var i = 1; i<26; i++) {
+        let tempTan = document.getElementById("card_"+i)
+        tempTan.setAttribute('class', 'tan square');
+    }
+}
+
 function randomCardList() {
     let greenRemaining = 9
     let blueRemaining = 8
@@ -76,7 +83,7 @@ function constructTable(horizontal, vertical) {
         for (j = vertical; j > 0; j--) {
             classColor = cardOrder[counter];
             counter += 1;
-            htmlOutput += "<td class=\"" + classColor + " square\"><div class=\"wordbox\">" + chooseAWord() + "</div></td>";        
+            htmlOutput += "<td class=\"" + classColor + " square\" id=\"card_"+counter+"\"><div class=\"wordbox\">" + chooseAWord() + "</div></td>";        
         }
         htmlOutput += "</tr>";
     }
@@ -85,17 +92,71 @@ function constructTable(horizontal, vertical) {
 }
 
 
+/*
+for (i = 0; i<=25; i++) {
+    console.log(i)
+}
+
+
+for (i = 0; i<=25; i++) {
+    console.log("card_"+i)
+}   
+
+card_1.setAttribute('class', 'tan');
+card_1.setAttribute('id','card_1');*/
+
+/*
+const gameState = {
+    card_1: {
+        "tileColor": "",
+        "tileWord": "",
+        "flippedState": false,   
+    },
+    card_2: {},
+    card_3: {},
+    card_4: {},
+    card_5: {},
+    card_6: {},
+    card_7: {},
+    card_8: {},
+    card_9: {},
+    card_10: {},
+    card_11: {},
+    card_12: {},
+    card_13: {},
+    card_14: {},
+    card_15: {},
+    card_16: {},
+    card_17: {},
+    card_18: {},
+    card_19: {},
+    card_20: {},
+    card_21: {},
+    card_22: {},
+    card_23: {},
+    card_24: {},
+    card_25: {},
 
 
 
+    otherInfo: {
+        "startingTeam":"",
+        "currentTurn":"",
+        "gameOver":false,
+        "greenCardsLeft":50,
+        "blueCardsLeft":50,
+        "playerRole": "",
+        "showColorSides":false,
+        "showClueInputControls":false,
+    },
 
+    blueClueLog: {
+        
+    },
 
+    greenClueLog: {
 
+    },
 
-
-
-
-
-
-
-
+}
+*/

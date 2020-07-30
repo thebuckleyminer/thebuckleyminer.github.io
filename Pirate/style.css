@@ -1,0 +1,288 @@
+/*.black background-color: black; *//*.tan background-color: blanchedalmond; *//*.blue background-color: #0078ff; *//*.green background-color: #78b548; */
+html {background-color: #172e5b;}
+.font1{font-family: 'Trade Winds', sans-serif;}  
+.font2{font-family: 'Open Sans', sans-serif;}
+.blue {background-image: url("./Wilkinson_Assets/Asset 3.png");}
+.green {background-image: url("./Wilkinson_Assets/Asset 4.png");}
+.tan {background-image: url("./Wilkinson_Assets/Asset 1.png");}
+.black {background-image: url("./Wilkinson_Assets/Asset 2.png");}
+.card{
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: contain;
+    text-align: center;
+    width: 200px;
+    height: 120px;
+}
+table{
+    border-spacing: 2px ;
+}
+
+#tableContainer {
+    width:70%;
+    display: inline-flex;    
+    padding: 0%;
+    margin: 0%
+}
+
+.wordbox {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    height: 20%;
+    font-family: 'Trade Winds', sans-serif;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+/*#blueScoreContainer{border: solid 5px #3399ff;}*/
+/*#greenScoreContainer{border: solid 5px #78b548  ;}*/
+.teamContainer{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    height: 10%;
+}
+#currentTeamDisplayColor{
+    padding: 10px;
+}
+#currentPlayerNameContainer{
+    border:5px solid white;
+    width: 10%;
+    background-color: #663300;    
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+.teamLogContainer{
+    border-radius: 10px;
+    height: 20%;
+    background-color: white;
+    border: black solid 4px;
+}
+#blueContainer{
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 13%;
+    align-items: flex-start;
+    justify-content: center;
+    margin:0%;
+}
+#greenContainer{
+    display:inline-flex;
+    flex-wrap: wrap;
+    width: 13%;
+    align-items: flex-start;
+    justify-content: center;
+    margin:0%;
+}
+#containerContainer{
+    
+    
+}
+.footerWaves{    
+    background-image: url("./Wilkinson_Assets/Asset waves.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+
+
+/**{border:2px solid red !important}*/
+    
+
+
+
+
+/*Index page*/
+.splashScreenWhiteBorder{
+    border: solid 5px white
+}
+
+#game-description {
+    color: white; 
+    background-color: cornflowerblue;
+    border: solid 5px white;
+    padding:1.5%;    
+}
+#links-to-codenames{    
+    color: black;
+    background-color: white;
+}
+#links-to-codenames  a{
+    color:black;
+    text-decoration: none;
+}
+#links-to-codenames  a:hover{
+    color:#43464b;
+    text-decoration: underline;
+}
+#play-game {
+    margin: 5px auto;
+    color: white;
+    background-color: #ffc400;
+    text-align: center;
+    padding: 20px;
+    font-size: 2.25em;
+    border-radius: 50px;
+    width: 50%;
+}
+
+a:link, a:visited {
+    color:white;
+    text-decoration: none;
+}
+a:hover {
+    color: darkorange;
+    text-decoration: none;
+}
+img {max-width:45%;
+    height:auto;
+    border: solid 5px white;
+    margin: auto;
+    display: block;
+}
+
+.smallPadding{
+    padding-left: 3%;    
+}
+
+
+
+
+.newPlayerbutton{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;   
+  }
+.greenButton{
+    background-color: #78b548;
+    border: 5px solid #1e5631;
+    color: white;    
+    
+}
+.greenButton:hover{
+    color: #1e5631;
+}
+
+
+
+
+.blueButton{
+    background-color: #3399ff;
+    border: 5px solid #10347c;
+    color: white;    
+    
+}
+.blueButton:hover{
+    color: #172e5b;
+}
+
+
+
+.gameModeButtons{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;     
+}
+.gameModeButtons:hover{
+    color: #74572e;
+}
+.newPlayerSubmitButton:disabled{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #c4a271;    
+}
+
+.newPlayerSubmitButton{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;    
+}
+.newPlayerSubmitButton:hover{
+    color: #74572e;
+}
+
+#finishTurnButton{
+    border: 5px solid black;
+    background-color: white;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;  
+     
+    outline:none;
+}
+#finishTurnButton:hover{
+    color: white;
+    background-color: black;
+}
+
+::placeholder{color: #c4a271;}
+input[type=text] {
+font-family: 'Trade Winds', sans-serif;
+background-color: #e2cca8;
+border: 5px solid #5e4117;
+color: #473111; 
+border-radius: 50px;
+font-size: 2em;
+padding-left: 20px;
+outline:none;
+}
+
+.roster{text-align: center;}
+
+
+
+.classCenter{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#orWord {
+    font-size: 1.5em;
+    color:white;
+    padding:10px;
+}
+#addPlayerNameForm{
+    font-size: 1.5em;
+}
+#gameTitle {
+    border-radius: 50px;
+    width: 35%;
+    height:50px;
+    text-align: center;
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.whiteText{color: white;}
+.oneAndHalfEm{
+    font-size: 2em;
+    text-align: center;
+}
+
+#gameModeButtonWindow{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
