@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Title>Wilkinson Pirate Game</Title>
+        <meta charset="utf-8">
+        <meta name="Author" content="Christopher Wilkinson">
+        <link rel="stylesheet" href="./style.css">
+        <script src="model.js"></script>
+        <script src="view.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet"> <!-- This is just a font from Google Fonts to make it look a little better-->
+        <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="./Wilkinson_Assets/skull Page Icon.png">
+    </head>
+
+    <body onload="newGame(5,5)">
+
+        <h1 class="center mainTitle"><a id="assignment3redirect" href="https://thebuckleyminer.github.io/GameGrid.html">The Legend of Pirate Beach</a></h1>
+        
+        <div id=containerContainer>
+            <div id=blueContainer>
+                <div id=blueScoreContainer class='teamContainer font2'>Blue Team Cards Left: <span id=blueScore>Blue-Score-Logic-Here</span></div>
+                <div id=blueTeamLogContainer class='teamLogContainer font2'><h3>Blue Team Clue Log:</h3><span id=blueTeamLog>Blue-Team-Log-Logic-Here</span></div>
+                <div id=blueTeamPlayers class='font2'>Blue Team:<span id=blueTeamRoster>Blue-Team-Roster-Here</span></div>
+            </div>
+
+            <div id="tableContainer">
+                <div id="mainGameTable">
+                    My JavaScript should replace this text with a cool table!
+                </div>
+            </div>
+            
+            <div id=greenContainer>
+                <div id=greenScoreContainer class='teamContainer font2'>Green Team Cards Left: <span id=greenScore>Blue-Score-Logic-Here</span></div>      
+                <div id=greenTeamLogContainer class='teamLogContainer font2'><h3>Green Team Clue Log:</h3><span id=greenTeamLog>Green-Team-Log-Logic-Here</span></div>
+                <div id=greenTeamPlayers class='font2'>Green Team:<span id=blueTeamRoster>Green-Team-Roster-Here</span></div>
+            </div>
+        </div>
+        <div id=currentPlayerNameContainer class='font2'>Current player: <span id=currentPlayerDisplay>Player-Name-Logic-Here</span></div>
+        
+        
+        
+        <div id=currentTeamDisplayColor class= 'font2'>Current Team Color</div>
+        
+        
+        
+
+    </body>
+    <div class="footerWaves"></div>
+</html>
