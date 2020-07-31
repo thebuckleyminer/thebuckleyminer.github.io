@@ -1,0 +1,76 @@
+
+.black {
+    /* background-color: black; */
+    background-image: url("Asset 2.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.tan {
+    /* background-color: blanchedalmond; */
+    background-image: url("Asset 1.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.blue {
+    /* background-color: #0078ff; */
+    background-image: url("Asset 3.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    
+}
+.green {
+    /* background-color: #78b548; */
+    background-image: url("Asset 4.png");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.square {
+    height: 129.1px;
+    width: 200px;
+    text-align: center;
+    /*border-radius: 20px; */
+}
+table{
+    margin: 5px auto;    
+}
+
+.center{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+#mainBlock {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: 5px solid white;
+}
+html {
+    background-color: #0097c6;
+}
+.wordbox {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    height: 20%;
+    font-family: 'Trade Winds', sans-serif;
+    text-align: center;
+    font-size: 1.25em;
+}
+.mainTitle {
+    font-family: 'Trade Winds', sans-serif;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.footerWaves{    
+    background-image: url("Asset waves.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 200px;
+}

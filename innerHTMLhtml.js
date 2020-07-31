@@ -19,7 +19,7 @@ const TutorialPageTwo = `
 <div id="TutorialPage2">
             <div class="darkTanBackground">
                 <div class="TutorialRow">
-                    <div class="Pirate_1 piratePicture"></div>
+                    <div class="Pirate_1 piratePictureLarge"></div>
                     <div class="Pirate_2 piratePicture"></div>
                     <div class="Pirate_3 piratePicture"></div>
                     <div class="Pirate_4 piratePicture"></div>
@@ -28,7 +28,7 @@ const TutorialPageTwo = `
                     <div class="Pirate_7 piratePicture"></div>
                     <div class="Pirate_8 piratePicture"></div>
                     <div class="Pirate_9 piratePicture"></div>
-                    <div class="Pirate_10 piratePicture"></div>
+                    <div class="Pirate_10 piratePictureSmall"></div>
                 </div>
                 <div id="PageTwoText">
                     <br>
