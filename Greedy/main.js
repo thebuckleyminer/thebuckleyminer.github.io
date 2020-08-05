@@ -1,4 +1,4 @@
-zebras = [DotValue,dieID,ActivalySelected,KeptPool]//ID Second So sorting will be easy by first value
+zebras = [DotValue,dieID,ActivalySelected,KeptPool,worthPointsThisRoll];//ID Second So sorting will be easy by first value
 
 function diceMaker(numberToMake=6){
     for(i=0;i>numberToMake;i++){
@@ -37,12 +37,23 @@ if(zebras[4] === true)
 
 
 
-[6,4,true,true,true]
+//[6,4,true,true,true]
 
-if(zebras[])
+//if(zebras[])
 
-for
-["firstIndex",0,0,0,0,0,0]
+
+let diceTally = ["firstIndex",0,0,0,0,0,0]//Keeps a tally of dice
+let selectedDiceTally = ["firstIndex",0,0,0,0,0,0]//Keeps a tally of how many have been clicked to prohibit selecting too many
+
+for(let i=0;i<6;i++){ if(zebras[3] === false){ diceTally[zebras[0]] += 1; } } //updated the diceTally with how many of each
+
+
+
+      
+
+
+
+
 
 function cwHtmlInserter(elementIDString,stringOfHTMLtoInsert){
     let tempFunctionVariable = document.getElementById(elementIDString);
@@ -59,4 +70,16 @@ function cwHtmlDisplay(elementIDString,displayTypeString){
 function cwHtmlHide(elementIDString){
     let tempFunctionVariable = document.getElementById(elementIDString);
     tempFunctionVariable.style.display = "none";
+}
+function cwHtmlDisableButton(elementIDString){
+    let tempFunctionVariable = document.getElementById(elementIDString);
+    tempFunctionVariable.style.display = "none";
+}
+function cwHtmlDisableButton(buttonIDString){
+    let tempFunctionVariable = document.getElementById(elementIDString);
+    tempFunctionVariable.disabled = true;
+}
+function cwHtmlEnableButton(buttonIDString){
+    let tempFunctionVariable = document.getElementById(elementIDString);
+    tempFunctionVariable.disabled = false;
 }
