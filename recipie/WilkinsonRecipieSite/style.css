@@ -1,0 +1,38 @@
+*{
+    //border: 1px solid red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.banner{background-color: #fe0056;}
+.mainTitle{
+    font-family: 'Galada', cursive;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+.recipieTitle h1{
+    font-family: 'Galada', cursive;
+    margin: 0px;
+}
+.recipie{
+    font-family: 'Noto Sans TC', sans-serif;
+    
+}
+
+.sharedBy{
+    
+}
+.yield{}
+.ingredients{}
+.directions{}
+
+
+.indent{margin-left: 2%;}
+.recipieSection{margin-top: 1%;}
+
+.crossout:hover{text-decoration: line-through;}
+
+
+    
+
+  
