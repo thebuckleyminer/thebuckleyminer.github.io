@@ -1,0 +1,22 @@
+.die1{background-image: url(./Die1.png);}
+.die2{background-image: url(./Die2.png);}
+.die3{background-image: url(./Die3.png);}
+.die4{background-image: url(./Die4.png);}
+.die5{background-image: url(./Die5.png);}
+.die6{background-image: url(./Die6.png);}
+
+.dice{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 150px;
+    height: 150px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+    border: 10px solid white;
+    border-radius: 15px;
+}
+.dice:hover{transform: translateY(-10px);}

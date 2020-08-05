@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Dice Game</title>
+        <link rel='stylesheet' href='greed.css'>
+    </head>
+    <body>
+        <div>
+            <h3>Rolled dice:</h3>
+        </div>
+        <div id="diceToRoll"></div>
+        
+        <div id="keptDice">
+            <h3>Dice to keep:</h3>
+            <div id="keptDiceHTML"></div>
+        </div>
+        
+        <div>
+            <button id="firstRollButton">Roll</button><button id="chooseToKeepButton">Keep & Roll Again</button><button id="finishTurnButton">Keep & Finish Turn</button><button id="finishTurnZeroButton">Finish Turn with Zero Points</button>
+            <button id="optionalSortButton">Sort (optional)</button>
+        </div>
+        <div>
+            Roll Score:<span id=userRollScoreSpan></span>
+            <br>
+            Turn Score:<span id=userScoreSpan></span>
+            <br>
+            Total Score:<span id=userActualScoreSpan></span>
+        </div>
+        <div id="previouslyKept">
+            <h3>Kept Dice:</h3>
+            <div id="previouslyKeptHTML"></div>
+        </div>
+
+        <script src='greed.js'></script>
+
+    </body>
+</html>
