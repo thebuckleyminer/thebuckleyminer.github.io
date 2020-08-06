@@ -1,40 +1,47 @@
+//cant select like 2 threes if there are three or more (only on 2,3,4,and 6)
+// replace "gamestatePLACEHOLDER" with actuall gamestate
 //REPLACE_ME!!!    look for and replace these
-let zebras = [];//[DotValue,dieID,ActivalySelected,KeptPool,worthPointsThisRoll];//ID Second So sorting will be easy by first value
+
+let gamestatePLACEHOLDER = [];//[DotValue,dieID,ActivalySelected,KeptPool,worthPointsThisRoll];//ID Second So sorting will be easy by first value
 let UserScore = [0,0,0];//[selectedScore, turnScore, gameScore]
 let selectedDiceTally = ["firstIndex",0,0,0,0,0,0];//Keeps a tally of how many have been clicked to prohibit selecting too many
 
-function generateDice(NumberOfDice=6){ for(let i=0; i<NumberOfDice; i++){ zebras.push([0,0,0,0,0]) } }
+function generateDice(NumberOfDice=6){ for(let i=0; i<NumberOfDice; i++){ gamestatePLACEHOLDER.push([0,0,0,0,0]) } }
 
 function newGame(){
-    zebras = []
+    gamestatePLACEHOLDER = []
     UserScore = [0,0,0]
     selectedDiceTally = ["firstIndex",0,0,0,0,0,0]
     generateDice()
     startingButtonVisibility()
 }
-
+function nextPlayersTurn(){
+    gamestatePLACEHOLDER = []
+    selectedDiceTally = ["firstIndex",0,0,0,0,0,0]
+    generateDice()
+    startingButtonVisibility()
+}
 function randNum0to6(){return Math.floor(Math.random()*6)+1}
 
 function rollDice(optionString){
     selectedDiceTally = ["firstIndex",0,0,0,0,0,0]
-    cwHtmlDisplay("sortDiceButton","inline")
     if(optionString ==="all"){
         for(let i=0;i<6;i++){
-            zebras[i][0] = randNum0to6();
-            zebras[i][1] = i;
-            zebras[i][2] = false;
-            zebras[i][3] = false;
-            zebras[i][4] = false;
+            gamestatePLACEHOLDER[i][0] = randNum0to6();
+            gamestatePLACEHOLDER[i][1] = i;
+            gamestatePLACEHOLDER[i][2] = false;
+            gamestatePLACEHOLDER[i][3] = false;
+            gamestatePLACEHOLDER[i][4] = false;
         }
     }
     else if(optionString ==="some"){        
         for(let i=0;i<6;i++){
-            if(zebras[i][3] === false){
-                zebras[i][0] = randNum0to6();
-                zebras[i][1] = i;
-                zebras[i][2] = false;
-                zebras[i][3] = false;
-                zebras[i][4] = false;
+            if(gamestatePLACEHOLDER[i][3] === false){
+                gamestatePLACEHOLDER[i][0] = randNum0to6();
+                gamestatePLACEHOLDER[i][1] = i;
+                gamestatePLACEHOLDER[i][2] = false;
+                gamestatePLACEHOLDER[i][3] = false;
+                gamestatePLACEHOLDER[i][4] = false;
             }
         }
     }
@@ -45,10 +52,10 @@ function RenderDice(){
     let diceHTMLSection2 = "";
     let diceHTMLSection3 = "";
     for(let i=0;i<6;i++){
-        if(zebras[i][3]===true){diceHTMLSection3 +=`<div class="dice die`+zebras[i][0]+`" name="`+i+`"></div>`}
+        if(gamestatePLACEHOLDER[i][3]===true){diceHTMLSection3 +=`<div class="dice die`+gamestatePLACEHOLDER[i][0]+`" name="`+i+`"></div>`}
         else{
-            if(zebras[i][2]===true){diceHTMLSection2 +=`<div class="dice die`+zebras[i][0]+`" name="`+i+`"></div>`}
-            else if (zebras[i][2]===false){diceHTMLSection1 +=`<div class="dice die`+zebras[i][0]+`" name="`+i+`"></div>`}
+            if(gamestatePLACEHOLDER[i][2]===true){diceHTMLSection2 +=`<div class="dice die`+gamestatePLACEHOLDER[i][0]+`" name="`+i+`"></div>`}
+            else if (gamestatePLACEHOLDER[i][2]===false){diceHTMLSection1 +=`<div class="dice die`+gamestatePLACEHOLDER[i][0]+`" name="`+i+`"></div>`}
         }
     }
     cwHtmlInserter("diceDisplaySection1",diceHTMLSection1)
@@ -59,7 +66,7 @@ function RenderDice(){
 
 function generateDiceTally(){
     let diceTally = ["DiceTallyList",0,0,0,0,0,0]; //Keeps a tally of dice
-    for(let i=0;i<6;i++){ if(zebras[i][3] === false){ diceTally[zebras[i][0]] += 1; } }; //updated the diceTally with how many of each
+    for(let i=0;i<6;i++){ if(gamestatePLACEHOLDER[i][3] === false){ diceTally[gamestatePLACEHOLDER[i][0]] += 1; } }; //updated the diceTally with how many of each
     return diceTally
 }
 function calculateScore(diceTally){
@@ -74,7 +81,7 @@ function calculateScore(diceTally){
         if(i[2]>=3){diceMathScore += 200,maxSelectable[2]=3}
         if(i[3]>=3){diceMathScore += 300,maxSelectable[3]=3}
         if(i[4]>=3){diceMathScore += 400,maxSelectable[4]=3}
-        if(i[5]>=3){diceMathScore += 500+((i[5]%3)*50),maxSelectable[5]= 3 + i[1]%3}
+        if(i[5]>=3){diceMathScore += 500+((i[5]%3)*50),maxSelectable[5]= 3 + i[5]%3}
         else{diceMathScore += i[5]*50,maxSelectable[5]=i[5]}
         if(i[6]>=3){diceMathScore += 600,maxSelectable[6]=3}
     }
@@ -84,7 +91,7 @@ function calculateScore(diceTally){
 function updateTurnScoreOnClick(){
     UserScore[0] = 0;
     let diceTally = ["DiceTallyList",0,0,0,0,0,0]; //Keeps a tally of dice
-    for(let i=0;i<6;i++){ if(zebras[i][2] === true){ diceTally[zebras[i][0]] += 1; } }; //updated the diceTally with how many of each
+    for(let i=0;i<6;i++){ if(gamestatePLACEHOLDER[i][2] === true){ diceTally[gamestatePLACEHOLDER[i][0]] += 1; } }; //updated the diceTally with how many of each
     let ClickedScore = calculateScore(diceTally)[0]
     UserScore[0] = ClickedScore;
 }
@@ -109,25 +116,24 @@ function updateScoreSpans() {
 
 
 
-
 // Functions for dice clicking
 function enableDieEventListeners() {
     let renderedDie = document.getElementsByClassName("dice");
-    for (i=0; i<6; i++){if(zebras[renderedDie[i].attributes["name"].value][3]===false){renderedDie[i].addEventListener("click",whenDieClicked,false)}}
+    for (i=0; i<6; i++){if(gamestatePLACEHOLDER[renderedDie[i].attributes["name"].value][3]===false){renderedDie[i].addEventListener("click",whenDieClicked,false)}}
 }
 function disableDieEventListeners() {
     let renderedDie = document.getElementsByClassName("dice");
-    for (i=0; i<6; i++){if(zebras[renderedDie[i].attributes["name"].value][3]===false){renderedDie[i].removeEventListener("click",whenDieClicked,false)}}
+    for (i=0; i<6; i++){if(gamestatePLACEHOLDER[renderedDie[i].attributes["name"].value][3]===false){renderedDie[i].removeEventListener("click",whenDieClicked,false)}}
 }
 function whenDieClicked(event){
     let indexNumber = parseInt(this.attributes["name"].value)
-    let i = zebras[indexNumber][0];
-    let maxSelectable = calculateScore(generateDiceTally(zebras));//example of running the functions
-    if (zebras[indexNumber][2] === true) {zebras[indexNumber][2] = false,selectedDiceTally[i] -= 1;}
-    else if (zebras[indexNumber][2] === false) {zebras[indexNumber][2] = true,selectedDiceTally[i] += 1;}
+    let i = gamestatePLACEHOLDER[indexNumber][0];
+    let maxSelectable = calculateScore(generateDiceTally(gamestatePLACEHOLDER));//example of running the functions
+    if (gamestatePLACEHOLDER[indexNumber][2] === true) {gamestatePLACEHOLDER[indexNumber][2] = false,selectedDiceTally[i] -= 1;}
+    else if (gamestatePLACEHOLDER[indexNumber][2] === false) {gamestatePLACEHOLDER[indexNumber][2] = true,selectedDiceTally[i] += 1;}
     
     if (selectedDiceTally[i] > maxSelectable[i]){
-        zebras[indexNumber][2] = false
+        gamestatePLACEHOLDER[indexNumber][2] = false
         selectedDiceTally[i] -= 1;
         console.log("Please Click on a 'Counter' This Does Not Have Value")//REPLACE_ME!!! Message Output, sorry can only select counters
     }
@@ -136,9 +142,6 @@ function whenDieClicked(event){
     updateScoreSpans()
     changeButtonVisibility()
 }
-
-
-
 
 // My functions to make code cleaner
 function cwHtmlInserter(elementIDString,stringOfHTMLtoInsert){
@@ -169,29 +172,24 @@ function cwHtmlEnableButton(buttonIDString){
     let tempFunctionVariable = document.getElementById(elementIDString);
     tempFunctionVariable.disabled = false;
 }
-
-
+const changableEndButton = document.getElementById("finishTurnWithoutPoints");
 function startingButtonVisibility(){
     cwHtmlDisplay("firstRollButton","inline")
-
     cwHtmlHide("rollDiceButton")
-    cwHtmlHide("sortDiceButton")
     cwHtmlHide("finishTurnWithPoints")
     cwHtmlHide("finishTurnWithoutPoints")
     cwHtmlHide("rollAllSixDiceButton")
 }
-
 function allSixKeepersButtonVisibility(){
     cwHtmlDisplay("finishTurnWithPoints","inline")
     cwHtmlDisplay("rollAllSixDiceButton","inline")
-
     cwHtmlHide("rollDiceButton")
     cwHtmlHide("firstRollButton")
     cwHtmlHide("finishTurnWithoutPoints")
 }
 function tooGreedyButtonVisibility(){
+    changableEndButton.innerHTML = "Turn over No Points";
     cwHtmlDisplay("finishTurnWithoutPoints","inline")
-
     cwHtmlHide("finishTurnWithPoints")
     cwHtmlHide("rollAllSixDiceButton")
     cwHtmlHide("rollDiceButton")
@@ -200,122 +198,113 @@ function tooGreedyButtonVisibility(){
 function canEndTurnOrRollButtonVisibility(){
     cwHtmlDisplay("finishTurnWithPoints","inline")
     cwHtmlDisplay("rollDiceButton","inline")
-
     cwHtmlHide("rollAllSixDiceButton")
     cwHtmlHide("firstRollButton")
     cwHtmlHide("finishTurnWithoutPoints")
 }
-
-
+function need500PointsFirst(){
+    cwHtmlDisplay("finishTurnWithoutPoints","inline")
+    cwHtmlHide("finishTurnWithPoints")
+    cwHtmlHide("rollAllSixDiceButton")
+    cwHtmlHide("rollDiceButton")
+    cwHtmlHide("firstRollButton")
+}
+function need500ToBeOnBoardButtonVisibility(){
+    
+    cwHtmlDisplay("rollDiceButton","inline")
+    cwHtmlHide("finishTurnWithPoints")
+    cwHtmlHide("rollAllSixDiceButton")
+    cwHtmlHide("firstRollButton")
+    cwHtmlHide("finishTurnWithoutPoints")
+}
+function changeButtonVisibility(){
+    if (UserScore[0] === 0){tooGreedyButtonVisibility()}
+    else{
+        let tempVariable = 0;
+        for (i=0; i<6; i++){if(gamestatePLACEHOLDER[i][3]===true||gamestatePLACEHOLDER[i][2]===true){tempVariable+=1}
+        if (tempVariable===6){allSixKeepersButtonVisibility()}
+        else{if(UserScore[2]<500 && ((UserScore[0]+UserScore[1])<500)){need500ToBeOnBoardButtonVisibility()} else{canEndTurnOrRollButtonVisibility()}}
+        }
+    }
+}
 
 const firstRollButton = document.getElementById("firstRollButton");
-const sortDiceButton = document.getElementById("sortDiceButton");
 const rollDiceButton = document.getElementById("rollDiceButton");
 const rollAllSixDiceButton = document.getElementById("rollAllSixDiceButton");
 const finishTurnWithPoints = document.getElementById("finishTurnWithPoints");
 const finishTurnWithoutPoints = document.getElementById("finishTurnWithoutPoints");
 
-
 firstRollButton.addEventListener("click",firstRollButtonPressed,false);
-sortDiceButton.addEventListener("click",SortDiceButtonPress,false);
 rollDiceButton.addEventListener("click",keepAndRollAgainPressed,false);
 rollAllSixDiceButton.addEventListener("click",KeepAndRollAgainAfterAllSixCounters,false);
 finishTurnWithPoints.addEventListener("click",keepAndFinishTurnPressed,false);
 finishTurnWithoutPoints.addEventListener("click",lostEverythingNextTurn,false);
 
-
-
 function firstRollButtonPressed(){
     rollDice("all")
     changeButtonVisibility()
-    
+
 }
-
-
 function keepAndRollAgainPressed(){
     UserScore[1] += UserScore[0];
     UserScore[0] = 0;
     updateScoreSpans();
     for(let i=0;i<6;i++){
-        if (zebras[i][2] === true){zebras[i][3] = true;zebras[i][2]=false}
+        if (gamestatePLACEHOLDER[i][2] === true){gamestatePLACEHOLDER[i][3] = true;gamestatePLACEHOLDER[i][2]=false}
     }
     rollDice("some")
     changeButtonVisibility()
 }
-
 function keepAndFinishTurnPressed(){
     turnOverUserScoreUpdater()
+    cwHtmlWiper("diceDisplaySection1")
+    cwHtmlWiper("diceDisplaySection2")
+    cwHtmlWiper("diceDisplaySection3")
+    nextPlayersTurn()
+    updateScoreSpans()
     
-    //REPLACE_ME!!! NEXT turn logic here
 }
 function lostEverythingNextTurn(){
+    UserScore[1] = 0
     console.log("LOST!!!!")
-    //REPLACE_ME!!! NEXT turn logic here
+    updateScoreSpans()
+    cwHtmlWiper("diceDisplaySection1")
+    cwHtmlWiper("diceDisplaySection2")
+    cwHtmlWiper("diceDisplaySection3")
+    nextPlayersTurn()
 }
-
-function SortDiceButtonPress(){
-        zebras.sort();
-        RenderDice()
-        cwHtmlHide("sortDiceButton")
-}
-
 function KeepAndRollAgainAfterAllSixCounters(){
     UserScore[1] += UserScore[0];
     UserScore[0] = 0;
     rollDice("all")
     changeButtonVisibility()
+    updateScoreSpans()
 }
 
 
 
 
-newGame()
 
-
-
-
-
-//must have 500 to get on board
-//cant select like 2 threes if there are three or more
-
-
-
-
-function changeButtonVisibility(){
-    if (UserScore[0] === 0){tooGreedyButtonVisibility()}
-    else{
-        let tempVariable = 0;
-        for (i=0; i<6; i++){if(zebras[i][3]===true||zebras[i][2]===true){tempVariable+=1}
-        if (tempVariable===6){allSixKeepersButtonVisibility()}
-        else{canEndTurnOrRollButtonVisibility()}
-        }
+function clickOnBackgroundToSort(){}
+    const backgroundClick1 = document.getElementById("diceDisplaySection1");
+    const backgroundClick2 = document.getElementById("diceDisplaySection2");
+    const backgroundClick3 = document.getElementById("diceDisplaySection3");
+    backgroundClick1.addEventListener("click",sortDice,false);
+    backgroundClick2.addEventListener("click",sortDice,false);
+    backgroundClick3.addEventListener("click",sortDice,false);
+    function sortDice(){
+        gamestatePLACEHOLDER.sort();
+        RenderDice()
     }
-}
-
-
-/*
-zebras = [DotValue,dieID,ActivalySelected,KeptPool,worthPointsThisRoll];//ID Second So sorting will be easy by first value
-for(let i=0;i<6;i++){ if(zebras[i][3] === false){ diceTally[zebras[i][0]] += 1; } }; //updated the diceTally with how many of each
-let UserScore = [0,0,0];//[selectedScore, turnScore, gameScore]
 
 
 
 
 
-cwHtmlHide("firstRollButton")
-cwHtmlHide("rollDiceButton")
-cwHtmlHide("sortDiceButton")
-cwHtmlHide("finishTurnWithPoints")
-cwHtmlHide("finishTurnWithoutPoints")
-cwHtmlHide("rollAllSixDiceButton")
 
-cwHtmlDisplay("firstRollButton","inline")
-cwHtmlDisplay("rollDiceButton","inline")
-cwHtmlDisplay("sortDiceButton","inline")
-cwHtmlDisplay("finishTurnWithPoints","inline")
-cwHtmlDisplay("finishTurnWithoutPoints","inline")
-cwHtmlDisplay("rollAllSixDiceButton","inline")
-*/
+
+
+
 
 let rules =
 `
@@ -330,3 +319,6 @@ If you roll and there are points, you may choose to keep them and end your turn,
 
 You must keep at least one die every roll to continue rolling or get points.
 `
+
+
+newGame()

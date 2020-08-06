@@ -6,13 +6,14 @@
         <link rel='stylesheet' href='game.css'>
     </head>
     <body>
-        <button id="firstRollButton">Roll Dice</button> <!-- Avaiable when player Starts Turn -->
-        <button id="sortDiceButton">Sort</button> <!-- Avaiable After Player rolls dice, disapears when clicked. -->
-        <button id="rollDiceButton">Keep and Roll Again</button> <!-- Avaiable when player Starts Turn -->
-        <button id="rollAllSixDiceButton">Keep and Re-roll All six dice</button> <!-- Avaiable if all six dice are kept -->
-        <button id="finishTurnWithPoints">Finish turn and keep points earned</button>
-        <button id="finishTurnWithoutPoints">Turn over No Points</button>
-        
+
+        <div id="buttonContainer">
+            <button id="firstRollButton">Roll Dice</button> <!-- Avaiable when player Starts Turn -->
+            <button id="rollDiceButton">Keep and Roll Again</button> <!-- Avaiable when player Starts Turn -->
+            <button id="rollAllSixDiceButton">Keep and Re-roll All six dice</button> <!-- Avaiable if all six dice are kept -->
+            <button id="finishTurnWithPoints">Finish turn and keep points earned</button>
+            <button id="finishTurnWithoutPoints">Turn over No Points</button>
+        </div>        
 
         <div id="diceViewContainer">
             Rolled Dice:
@@ -28,6 +29,12 @@
             Turn Score: <span id="score2"></span><br>
             Game Score: <span id="score3"></span><br>
         </div>
+
+        <div id="hintContainer">
+            <br>Hint: Click on Dice Background To Sort
+            <br>Hint: If you accidently select a die, click of it again to put it back
+        </div>
+        
         <script src='main.js'></script>
     </body>
 </html>

@@ -16,11 +16,26 @@
     transition-property: transform;
     margin-left: auto;
     margin-right: auto;  
-    display: inline-block;
-
-    
+    display: inline-block;   
 }
+
 .dice:hover{transform: translateY(-10px);}
+
+#buttonContainer{
+    background-color: limegreen;
+    height: 30px;}
+
+#diceViewContainer{
+    background-color: mediumpurple;
+}
 #diceDisplaySection1{height:200px;width: 100%;background-color: lightslategray;}
 #diceDisplaySection2{height:200px;width: 100%;background-color: lightslategray;}
 #diceDisplaySection3{height:200px;width: 100%;background-color: lightslategray;}
+
+#scoreViewContainer{
+    background-color: orange;
+    }
+
+#hintContainer{
+    background-color: green;
+    }
