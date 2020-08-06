@@ -1,4 +1,8 @@
-
+*{margin: 0px;}
+html {
+    font-size: 150%;
+    background-color: #616f7d;
+} 
 .die1{background-image: url(./Die1.png);}
 .die2{background-image: url(./Die2.png);}
 .die3{background-image: url(./Die3.png);}
@@ -22,20 +26,24 @@
 .dice:hover{transform: translateY(-10px);}
 
 #buttonContainer{
-    background-color: limegreen;
+    background-color: #b4bec7;
     height: 30px;}
 
 #diceViewContainer{
-    background-color: mediumpurple;
+    background-color: #a8b3be;
 }
-#diceDisplaySection1{height:200px;width: 100%;background-color: lightslategray;}
-#diceDisplaySection2{height:200px;width: 100%;background-color: lightslategray;}
-#diceDisplaySection3{height:200px;width: 100%;background-color: lightslategray;}
+#diceDisplaySection1{height:200px;width: 100%;background-color: #9ca8b4;}
+#diceDisplaySection2{height:200px;width: 100%;background-color: #8f9dab;}
+#diceDisplaySection3{height:200px;width: 100%;background-color: #8392a2;}
 
 #scoreViewContainer{
-    background-color: orange;
+    background-color: #778899;
     }
 
 #hintContainer{
-    background-color: green;
+    background-color: #6c7b8b;
     }
+
+.leftPadding{
+    padding-left: 15px;
+}

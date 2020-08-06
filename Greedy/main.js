@@ -1,6 +1,11 @@
+
+
+//sortingProblems
+//InmplementPlayers
+//Make it look nice
 //cant select like 2 threes if there are three or more (only on 2,3,4,and 6)
 // replace "gamestatePLACEHOLDER" with actuall gamestate
-//REPLACE_ME!!!    look for and replace these
+
 
 let gamestatePLACEHOLDER = [];//[DotValue,dieID,ActivalySelected,KeptPool,worthPointsThisRoll];//ID Second So sorting will be easy by first value
 let UserScore = [0,0,0];//[selectedScore, turnScore, gameScore]
@@ -135,7 +140,7 @@ function whenDieClicked(event){
     if (selectedDiceTally[i] > maxSelectable[i]){
         gamestatePLACEHOLDER[indexNumber][2] = false
         selectedDiceTally[i] -= 1;
-        console.log("Please Click on a 'Counter' This Does Not Have Value")//REPLACE_ME!!! Message Output, sorry can only select counters
+        console.log("Please Click on a 'Counter' This Does Not Have Value")//REPLACE if you want with an actual output
     }
     updateTurnScoreOnClick()
     RenderDice()
@@ -297,28 +302,6 @@ function clickOnBackgroundToSort(){}
         RenderDice()
     }
 
-
-
-
-
-
-
-
-
-
-let rules =
-`
-You have to have 500pts to be "On the Board"
-
-if all 6 dice are counters you may roll again.
-
-You may finish your turn any time you roll points
-
-If you roll and there are no points, then your turn is over and you have zero.
-If you roll and there are points, you may choose to keep them and end your turn, or keep them and keep rolling.
-
-You must keep at least one die every roll to continue rolling or get points.
-`
 
 
 newGame()
