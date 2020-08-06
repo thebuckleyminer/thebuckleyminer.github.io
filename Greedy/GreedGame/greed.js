@@ -89,6 +89,7 @@ function enableDieEventListeners() {
     let renderedDie = document.getElementsByClassName("dice");
     for (i=0; i<6; i++){if(gameState.DiceCondensedList[renderedDie[i].attributes["name"].value][2]===0){renderedDie[i].addEventListener("click",DieClickEvent,false)}}
 }
+
 function disableDieEventListeners() {
     let renderedDie = document.getElementsByClassName("dice");
     for (i=0; i<6; i++){if(gameState.DiceCondensedList[renderedDie[i].attributes["name"].value][2]===0){renderedDie[i].removeEventListener("click",DieClickEvent,false)}}
@@ -102,7 +103,6 @@ function DieClickEvent(event){
     disableDieEventListeners();
     enableDieEventListeners();
     CheckToEnableNewTurnButton();
-    
 }
 
 const chooseToKeepButton = document.getElementById('chooseToKeepButton');

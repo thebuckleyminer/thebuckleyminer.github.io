@@ -1,9 +1,33 @@
-<button>Roll Dice</button> <!-- Avaiable when player Starts Turn -->
-<button>Sort</button> <!-- Avaiable After Player rolls dice, disapears when clicked. -->
-<button>Finish turn and keep points earned</button>
-<button>Re-roll All six dice</button> <!-- Avaiable if all six dice are kept -->
-<button></button>
-<button></button>
+<!doctype html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Greedy Dice Game</title>
+        <link rel='stylesheet' href='game.css'>
+    </head>
+    <body>
+        <button id="firstRollButton">Roll Dice</button> <!-- Avaiable when player Starts Turn -->
+        <button id="sortDiceButton">Sort</button> <!-- Avaiable After Player rolls dice, disapears when clicked. -->
+        <button id="rollDiceButton">Keep and Roll Again</button> <!-- Avaiable when player Starts Turn -->
+        <button id="rollAllSixDiceButton">Keep and Re-roll All six dice</button> <!-- Avaiable if all six dice are kept -->
+        <button id="finishTurnWithPoints">Finish turn and keep points earned</button>
+        <button id="finishTurnWithoutPoints">Turn over No Points</button>
+        
 
-Points earned this turn:
-Game Total Points:
+        <div id="diceViewContainer">
+            Rolled Dice:
+            <div id=diceDisplaySection1></div>
+            Selected Dice:
+            <div id=diceDisplaySection2></div>
+            Previously Kept Dice:
+            <div id=diceDisplaySection3></div>
+        </div>
+
+        <div id="scoreViewContainer">
+            Dice Selected Score: <span id="score1"></span><br>
+            Turn Score: <span id="score2"></span><br>
+            Game Score: <span id="score3"></span><br>
+        </div>
+        <script src='main.js'></script>
+    </body>
+</html>
