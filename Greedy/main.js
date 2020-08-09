@@ -1,6 +1,5 @@
 
 
-//sortingProblems
 //InmplementPlayers
 //Make it look nice
 //cant select like 2 threes if there are three or more (only on 2,3,4,and 6)
@@ -50,6 +49,7 @@ function rollDice(optionString){
             }
         }
     }
+    gamestatePLACEHOLDER.sort()
     RenderDice()
 }
 function RenderDice(){
@@ -286,21 +286,6 @@ function KeepAndRollAgainAfterAllSixCounters(){
     updateScoreSpans()
 }
 
-
-
-
-
-function clickOnBackgroundToSort(){}
-    const backgroundClick1 = document.getElementById("diceDisplaySection1");
-    const backgroundClick2 = document.getElementById("diceDisplaySection2");
-    const backgroundClick3 = document.getElementById("diceDisplaySection3");
-    backgroundClick1.addEventListener("click",sortDice,false);
-    backgroundClick2.addEventListener("click",sortDice,false);
-    backgroundClick3.addEventListener("click",sortDice,false);
-    function sortDice(){
-        gamestatePLACEHOLDER.sort();
-        RenderDice()
-    }
 
 
 
