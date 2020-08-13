@@ -1,6 +1,16 @@
+/*
+Turn main banner into clue thing
+toggle between the submit buttons
+Make Finish Turn hoverable after flashing
+Make Cards not Double Clickable
+Abolish Clue Log for Bigger Found Pirate Log
+*/
+
+
 //Christopher Wilkinson
-//Semester Project
+//Assignment 4
 Start()
+
 function Start(){
     const currentPlayerNameContainer = document.getElementById('currentPlayerNameContainer');
     currentPlayerNameContainer.style.display = 'none';
@@ -132,24 +142,7 @@ function ChoosePlayerRoles() {
     }
     swichBackToButtons()    
 }
-
-
-///// Loads The JSON word arrays /////
-let wordBank = [];
-let pirateLastNameList = [];
-let pirateFirstNameList = [];
-letAssignmentSixOjbect = new XMLHttpRequest();
-letAssignmentSixOjbect.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let tempVarAssign6=this.responseText;
-        let jsonGameStateObject = JSON.parse(tempVarAssign6);
-        wordBank=jsonGameStateObject.wordBank;
-        pirateLastNameList = jsonGameStateObject.pirateLastNameList;
-        pirateFirstNameList =jsonGameStateObject.pirateFirstNameList;
-    }
-};
-letAssignmentSixOjbect.open("GET", "./JSONwordLists.json", false);
-letAssignmentSixOjbect.send(null);
+///// Pre-Game Player Selection Above /////
 
 ///// This "newGame()" Function Generates a New Game /////
 let GameCardNumber = 0
@@ -424,6 +417,8 @@ function greenTeamLog() {
     return logOutput
 }
 
+
+    
 function blueCluePrompt() {
     var blueClueInput = prompt("Blue Team Clue", "Enter Clue Here");
     var blueClueInputNumber = prompt("Number of cards that match clue", "Enter number of cards to choose here");
@@ -552,6 +547,7 @@ function disableCaptainClue(){
     updateAll();    
 }
 
+
 function pushPirateNameToFoundPirateList(cardNumber){  
     let CardWord = gameState[cardNumber].tileWord;
     let teamColor = gameState[cardNumber].cardObjectType;
@@ -609,6 +605,10 @@ function inBetweenScreenPopupWindow(){
         if (gameState.playerList.currentPlayer[2] === "FirstMate"){ShowFinishTurnButton()};
     }
 }
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function reRenderCardsGameOver() { 
