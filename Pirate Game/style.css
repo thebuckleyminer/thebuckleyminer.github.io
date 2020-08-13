@@ -1,0 +1,655 @@
+@font-face{ 
+	font-family: 'leanderFont';
+	src: url('./AssetsFromOtherSources/LeanderFont/Leander-webfont.woff') format('woff');
+}
+.fontTypeOne{
+    font-family: 'leanderFont', sans-serif;
+}
+.fontTypeTwo{
+    font-family: 'Trade Winds', sans-serif;
+}
+html{
+    background-color: #036182;
+}
+.helmIMG{
+    background-image: url(./TutorialAssets/Helm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    transition-duration: 2.0s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;
+}
+.helmIMG:hover {transform: rotate(3600deg);}
+
+.darkTanBackground{
+    font-family: 'leanderFont';
+    background-color: #e2cca8;
+    border: 10px solid #623910;
+    border-radius: 50px;
+    margin: 50px;
+    padding: 25px;
+    font-size: 2.5rem;
+}
+.darkTanBackground p {
+    margin: 0;
+    text-align: center;
+}
+.darkTanBackground h3 {
+    margin: 10px;
+    text-align: center;
+}
+.darkTanBackground h3 .leftText{
+    margin: 10px;
+    text-align: left;
+}
+.darkTanBackground hr {
+    width: 85%;
+    border: 3px solid #623910;
+}
+.UniversalNextButtonContainer{
+    margin-left: auto;
+    margin-right: auto;    
+    text-align: center;
+}
+.UniversalNextButton{
+    background-color: #e2cca8;
+    border: 10px solid #623910;
+    width: 15%;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+    outline: none;    
+    text-align: center;
+    box-shadow: 10px 10px  #2e1c00;
+}
+.UniversalNextButton:hover{
+    box-shadow: 5px 5px #2e1c00;
+}
+#documentation h3{
+    font-weight: bold;
+    font-size: large;
+    color: burlywood;
+    font-style: oblique;
+}
+#documentation h2{
+    font-weight: bold;
+    color: burlywood;
+    font-style: oblique;
+}
+#documentation{
+    font-weight: bold;
+    background-color: brown;
+    font-size: large;
+    padding: 10px;
+}
+#documentationLink{
+    font-size: 2.5rem;
+}
+.TutorialRow{display: flex;}
+
+.Pirate_1{background-image: url(./TutorialAssets/Pirate_1.png);}
+.Pirate_2{background-image: url(./TutorialAssets/Pirate_2.png);}
+.Pirate_3{background-image: url(./TutorialAssets/Pirate_3.png);}
+.Pirate_4{background-image: url(./TutorialAssets/Pirate_4.png);}
+.Pirate_5{background-image: url(./TutorialAssets/Pirate_5.png);}
+.Pirate_6{background-image: url(./TutorialAssets/Pirate_6.png);}
+.Pirate_7{background-image: url(./TutorialAssets/Pirate_7.png);}
+.Pirate_8{background-image: url(./TutorialAssets/Pirate_8.png);}
+.Pirate_9{background-image: url(./TutorialAssets/Pirate_9.png);}
+.Pirate_10{background-image: url(./TutorialAssets/Pirate_10.png);}
+.piratePicture:hover{transform: translateY(-25px);}
+.piratePicture{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 150px;
+    height: 250px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+}
+.piratePictureLarge{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 300px;
+    height: 250px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+}
+.piratePictureSmall{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 125px;
+    height: 250px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+}
+.greenTeamExample{background-image: url(./TutorialAssets/Green_Team.png);transform: rotate(-14deg);}
+.blueTeamExample{background-image: url(./TutorialAssets/Blue_Team.png);transform: rotate(14deg);}
+.greenTeamExample:hover{transform: translateX(-25px);}
+.blueTeamExample:hover{transform: translateX(-25px);}
+.exampleTeamPicture{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 500px;
+    height: 350px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.blackCardExample{background-image: url(./TutorialAssets/black_card_example.png);}
+.tanCardExample{background-image: url(./TutorialAssets/tan_card_example.png);}
+.greenCardExample{background-image: url(./TutorialAssets/Green_Team.png);}
+.blueCardExample{background-image: url(./TutorialAssets/Blue_Team.png);}
+.exampleCardPicture{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 350px;
+    height: 350px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.hoverOne:hover{transform: translateX(-25px);transform: rotate(-14deg);}
+.hoverTwo:hover{transform: translateX(25px);}
+.hoverThree:hover{transform: translateX(-25px);}
+.hoverFour:hover{transform: translateX(-25px);transform: rotate(14deg);}
+
+.exampleCardFront_1{background-image: url(./TutorialAssets/exampleCardFront_1.png);}
+.exampleCardFront_2{background-image: url(./TutorialAssets/exampleCardFront_2.png);}
+.exampleCardFront_3{background-image: url(./TutorialAssets/exampleCardFront_3.png);}
+.exampleCardFront_4{background-image: url(./TutorialAssets/exampleCardFront_4.png);}
+.exampleCardBack_1{background-image: url(./TutorialAssets/exampleCardBack_1.png);}
+.exampleCardBack_2{background-image: url(./TutorialAssets/exampleCardBack_2.png);}
+.exampleCardBack_3{background-image: url(./TutorialAssets/exampleCardBack_3.png);}
+.exampleCardBack_4{background-image: url(./TutorialAssets/exampleCardBack_4.png);}
+.exampleCardWordsPicture{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    width: 350px;
+    height: 150px;
+    transition-duration: 0.25s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;  
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/* Tutorial CSS*/
+html{background-color: #036182;}
+.font1{font-family: 'Trade Winds', sans-serif;}  
+.font2{font-family: 'Open Sans', sans-serif;}
+.blue {background-image: url("./GameAssets/CardBackBlue.png");}
+.green {background-image: url("./GameAssets/CardBackGreen.png");}
+.tan {background-image: url("./GameAssets/CardFrontTan.png");}
+.tanBack {background-image: url("./GameAssets/CardBackTan.png");}
+.black {background-image: url("./GameAssets/CardBackBlack.png");}
+
+.blueClicked0 {background-image: url("./GameAssets/Blue/BlueCard0.png");}
+.blueClicked1 {background-image: url("./GameAssets/Blue/BlueCard1.png");}
+.blueClicked2 {background-image: url("./GameAssets/Blue/BlueCard2.png");}
+.blueClicked3 {background-image: url("./GameAssets/Blue/BlueCard3.png");}
+.blueClicked4 {background-image: url("./GameAssets/Blue/BlueCard4.png");}
+.blueClicked5 {background-image: url("./GameAssets/Blue/BlueCard5.png");}
+.blueClicked6 {background-image: url("./GameAssets/Blue/BlueCard6.png");}
+.blueClicked7 {background-image: url("./GameAssets/Blue/BlueCard7.png");}
+.blueClicked8 {background-image: url("./GameAssets/Blue/BlueCard8.png");}
+.blueClicked9 {background-image: url("./GameAssets/Blue/BlueCard9.png");}
+.greenClicked0 {background-image: url("./GameAssets/Green/GreenCard0.png");}
+.greenClicked1 {background-image: url("./GameAssets/Green/GreenCard1.png");}
+.greenClicked2 {background-image: url("./GameAssets/Green/GreenCard2.png");}
+.greenClicked3 {background-image: url("./GameAssets/Green/GreenCard3.png");}
+.greenClicked4 {background-image: url("./GameAssets/Green/GreenCard4.png");}
+.greenClicked5 {background-image: url("./GameAssets/Green/GreenCard5.png");}
+.greenClicked6 {background-image: url("./GameAssets/Green/GreenCard6.png");}
+.greenClicked7 {background-image: url("./GameAssets/Green/GreenCard7.png");}
+.greenClicked8 {background-image: url("./GameAssets/Green/GreenCard8.png");}
+.greenClicked9 {background-image: url("./GameAssets/Green/GreenCard9.png");}
+.tanClicked0 {background-image: url("./GameAssets/Tan/TanCard0.png");}
+.tanClicked1 {background-image: url("./GameAssets/Tan/TanCard1.png");}
+.tanClicked2 {background-image: url("./GameAssets/Tan/TanCard2.png");}
+.tanClicked3 {background-image: url("./GameAssets/Tan/TanCard3.png");}
+.tanClicked4 {background-image: url("./GameAssets/Tan/TanCard4.png");}
+.tanClicked5 {background-image: url("./GameAssets/Tan/TanCard5.png");}
+.tanClicked6 {background-image: url("./GameAssets/Tan/TanCard6.png");}
+.tanClicked7 {background-image: url("./GameAssets/Tan/TanCard7.png");}
+.tanClicked8 {background-image: url("./GameAssets/Tan/TanCard8.png");}
+.tanClicked9 {background-image: url("./GameAssets/Tan/TanCard9.png");}
+.blackClicked0 {background-image: url("./GameAssets/GameOver.png");}
+
+.wordboxClicked {
+    font-family: 'Trade Winds', sans-serif;
+    text-align: center;
+    margin-right: 60%;
+    transform: rotate(-90deg);
+}
+.card{
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: contain;
+    text-align: center;
+    width: 200px;
+    height: 120px;
+}
+table{
+    border-spacing: 2px ;
+}
+#tableContainer {
+    display: inline-flex;    
+    padding: 0%;
+    margin: 0%
+}
+.wordbox {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    height: 20%;
+    font-family: 'Trade Winds', sans-serif;
+    text-align: center;
+    font-size: 1.25em;    
+}
+.teamContainerBlue{
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 1.25em;
+    background-color: #3399ff;
+    border: 5px solid white;
+    color: black;
+    margin-bottom: 10px;
+}
+.teamContainerGreen{
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 1.25em;
+    background-color: #78b548;
+    border: 5px solid white;
+    color: black;
+    margin-bottom: 10px;
+}
+#currentTeamDisplayColor{
+    padding: 10px;
+}
+.teamLogContainer{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 5px;
+}
+.foundPiratesContainer{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 1em;
+    margin-top: 10px;
+}
+.FoundPirates{
+    font-size: 2em;
+    margin-left: 5px;
+}
+#blueContainer{
+    display:inline-flex;
+    flex-direction: column;
+    width: 18%;
+    margin:0%;
+}
+#greenContainer{
+    display:inline-flex;
+    flex-direction: column;
+    width: 18%;
+    margin:0%;
+}
+#containerContainer{
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+}
+.footerWaves{    
+    background-image: url("./GameAssets/Asset waves.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+/*Index page*/
+.indexTitleContainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#indexContainer{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.splashScreenWhiteBorder{
+    border: solid 5px white
+}
+#game-description {
+    color: white; 
+    background-color: #001F3F;
+    border: solid 5px white;
+    border-radius: 15px;
+    padding:1.5%;    
+    display: block;
+}
+#links-to-codenames{    
+    color: white;
+    background-color: #001F3F;
+    border-radius: 20px;
+    width: 80%;
+    border:5px solid black;
+    padding:15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#links-to-codenames  a{
+    color:white;
+    text-decoration: none;
+}
+#links-to-codenames  a:hover{
+    color:#43464b;
+    text-decoration: underline;    
+}
+#play-game {
+    margin: 15px auto;
+    color: white;
+    background-color: #ffc400;
+    text-align: center;
+    padding: 20px;
+    font-size: 2.25em;
+    border-radius: 50px;
+    width: 50%;
+}
+a:link, a:visited {
+    color:white;
+    text-decoration: none;
+}
+a:hover {
+    color: darkorange;
+    text-decoration: none;
+}
+.my-picture{
+    display: block;
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#beachImageIndex {
+    height:auto;
+    border: solid 5px white;
+    margin: auto;
+    display: inline-block;
+    width: 98%;
+}
+.smallPadding{
+    padding-left: 3%;    
+}
+.newPlayerbutton{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;   
+  }
+.greenButton{
+    background-color: #78b548;
+    border: 5px solid #1e5631;
+    color: white;    
+}
+.greenButton:hover{
+    color: #1e5631;
+}
+.blueButton{
+    background-color: #3399ff;
+    border: 5px solid #10347c;
+    color: white;    
+}
+.blueButton:hover{
+    color: #172e5b;
+}
+.gameModeButtons{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;     
+}
+.gameModeButtons:hover{
+    color: #74572e;
+}
+.newPlayerSubmitButton:disabled{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #c4a271;    
+}
+.newPlayerSubmitButton{
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;    
+}
+.newPlayerSubmitButton:hover{
+    color: #74572e;
+}
+::placeholder{color: #c4a271;}
+input[type=text] {
+font-family: 'Trade Winds', sans-serif;
+background-color: #e2cca8;
+border: 5px solid #5e4117;
+color: #473111; 
+border-radius: 50px;
+font-size: 2em;
+padding-left: 20px;
+outline:none;
+}
+.roster{
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.classCenter{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#orWord {
+    font-size: 1.5em;
+    color:white;
+    padding:10px;
+}
+#addPlayerNameForm{
+    font-size: 1.5em;
+}
+.whiteText{color: white;}
+.oneAndHalfEm{
+    font-size: 2em;
+    text-align: center;
+}
+#gameModeButtonWindow{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#inBetweenTurnGoBackPlayer{
+    border:5px solid white;
+    width: 10%;
+    background-color: black;   
+    color: black; 
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-size: 1.5em;
+}
+#InbetweenPlayerPopupContainer{
+    width: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.submitAndFinishTurnButton{
+    border: 5px solid rgb(90, 90, 90);
+    background-color: black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;  
+    outline:none;
+}
+.submitAndFinishTurnButton:hover{
+    border: 5px solid rgb(130, 130, 130);
+    color: rgb(130, 130, 130);
+}
+.submitAndFinishTurnButton:disabled{
+    background-color: #e2cca8;
+}
+.dropDownNumberOfCards {
+    background-color: #e2cca8;
+    color:#5e4117;
+    border: 5px #5e4117 solid;
+    width: 50px;
+    height: 60px;
+    font-size: 1.5em;
+    border-radius: 20px;
+    outline:none;
+}
+#CaptainsInput{
+    background-color: #c7a66c;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 25px;
+    border: 5px solid #5e4117;
+    margin-top: 15px;
+    text-align: center;
+}
+#CaptainsInput p{
+    margin: 5px 15px;
+    font-size: 1.5em;
+}
+#CaptainsInput #CaptainsClue{
+    margin: 5px 15px;   
+}
+#CaptainsInput #submitCaptainClueButton{
+    margin: 5px 15px;   
+}
+body{margin: 0;padding:0;}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+}
+#topSection{
+    display: flex;
+    justify-content:space-around; 
+    margin: 10px 10px;
+}
+#topSection1{
+    width: 25%;
+}
+#currentPlayerDisplay{
+    font-size: 1.5em;
+}
+#currentPlayerNameContainer{
+    display: inline-block;
+    border:5px solid white;
+    width: 95%;
+    background-color: black;    
+    padding: 5px;
+    border-radius: 50px;
+    text-align: center;
+    margin: 0px;    
+}
+#topSection2 {
+    border-radius: 50px;
+    width: 40%;    
+    text-align: center;
+    background-color: #e2cca8;
+    border: 5px solid #5e4117;
+    color: #473111;
+}
+#topSection2 h1{
+    margin: 0;padding: 0;
+}
+#topSection3{
+    width: 25%;
+}
+#finishTurnButtonContainer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+.finishTurnButton{
+    border: 5px solid white;
+    border-radius: 50px; 
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    font-size: 1.5em;
+    width: 100%;
+}
+.finishTurnButton:hover{
+    border: 5px solid rgb(90, 90, 90);
+}
+.helmBetweenTurns{
+    background-image: url(./TutorialAssets/Helm.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 300px;
+    transition-duration: 180s;
+    transition-property: transform;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
