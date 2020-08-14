@@ -198,18 +198,17 @@ const buttonsHTMLstring=`
 </div>`
 
 const nameFourmHTMLstring =`
-<form id='addPlayerNameForm' spellcheck="false">
+<div id='addPlayerNameForm' >
     <h1 class='whiteText'>What be ye Pirate Name:</h1>
-    <input type='text' id='name' name='name' autofocus placeholder=' Name' maxlength=32>
+    <input type='text' id='nameTextInput' name='name' autofocus placeholder=' Name' maxlength=32 spellcheck="false">
     <button type='submitButton' class='newPlayerSubmitButton newPlayerbutton font1' id='submitButton' disabled>Submit</button>
-</form>`
+</div>`
 
 const mainGameHTMLstring =`
 <div id=blueContainer>    
     <div id=blueTeamPlayers class='font1 roster whiteText'><span id=blueTeamRoster>Blue-Team-Roster-Here</span></div>
-    <div id=blueScoreContainer class='teamContainerBlue font1'>Cards Left: <span id=blueScore>Blue-Score-Logic-Here</span></div>
-    <div id=blueTeamLogContainer class='teamLogContainer font1'>Blue Team Clue Log:<br><span id=blueTeamLog>Blue-Team-Log-Logic-Here</span></div>
-    <div id=blueTeamFoundPirates class='foundPiratesContainer font1'><span class="FoundPirates">Found Pirates:</span><br><span id=blueTeamFoundPiratesSpan>Found-Pirate-List-Here</span></div>
+    <div id=blueScoreContainer class='teamContainerBlue font1 blueBorderBlueTeam'>Cards Left: <span id=blueScore>Blue-Score-Logic-Here</span></div>
+    <div id=blueTeamFoundPirates class='foundPiratesContainer font1 blueBorderBlueTeam'><span class="FoundPirates">Found Pirates:</span><br><span id=blueTeamFoundPiratesSpan>Found-Pirate-List-Here</span></div>
 </div>
 
 <div id="tableContainer" class="classCenter">
@@ -220,30 +219,11 @@ const mainGameHTMLstring =`
 
 <div id=greenContainer>    
     <div id=greenTeamPlayers class='font1 roster whiteText'><span id=greenTeamRoster>Green-Team-Roster-Here</span></div>
-    <div id=greenScoreContainer class='teamContainerGreen font1'>Cards Left: <span id=greenScore>Blue-Score-Logic-Here</span></div>   
-    <div id=greenTeamLogContainer class='teamLogContainer font1'>Green Team Clue Log:<br><span id=greenTeamLog>Green-Team-Log-Logic-Here</span></div>
-    <div id=greenTeamFoundPirates class='foundPiratesContainer font1'><span class="FoundPirates">Found Pirates:</span><br><span id=greenTeamFoundPiratesSpan>Found-Pirate-List-Here</span></div>  
+    <div id=greenScoreContainer class='teamContainerGreen font1 greenBorderGreenTeam'>Cards Left: <span id=greenScore>Blue-Score-Logic-Here</span></div>   
+    <div id=greenTeamFoundPirates class='foundPiratesContainer font1 greenBorderGreenTeam'><span class="FoundPirates">Found Pirates:</span><br><span id=greenTeamFoundPiratesSpan>Found-Pirate-List-Here</span></div>  
 </div>
 `
-let captainInputHTMLstring=`
-<div id='CaptainsInput'>
-    <p class='font1 whiteText'>Enter a clue and how many cards your team should guess:</p>
-    
-    <input type="text" id="CaptainsClue" name="CaptainsClue">     
-    <select name="dropDownNumberOfCards" class='font1 dropDownNumberOfCards' id="dropDownNumberOfCards">
-        <option value=0>0</option>
-        <option value=1>1</option>
-        <option value=2>2</option>
-        <option value=3>3</option>
-        <option value=4>4</option>
-        <option value=5>5</option>
-        <option value=6>6</option>
-        <option value=7>7</option>
-        <option value=8>8</option>
-        <option value=9>9</option>
-    </select>
-    <button id='submitCaptainClueButton' class='submitAndFinishTurnButton font1'>Submit and Finish Turn</button>
-</div>`
+
 
 let foundGreenPirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];
 let foundBluePirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];

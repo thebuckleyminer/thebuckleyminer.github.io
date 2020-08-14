@@ -1,7 +1,15 @@
 //Christopher Wilkinson
 //Semester Project
-Start()
-function Start(){
+
+
+
+
+
+
+
+
+
+function Start(restart=false){
     const currentPlayerNameContainer = document.getElementById('currentPlayerNameContainer');
     currentPlayerNameContainer.style.display = 'none';
     const finishTurnButtonContainer = document.getElementById('finishTurnButtonContainer');
@@ -10,10 +18,11 @@ function Start(){
     GameStartupOptionWindows.innerHTML = StartingWindowDivisions;
     const HideMainGame = document.getElementById('containerContainer');
     HideMainGame.innerHTML = "";
-    TUTORIAL()
+    TUTORIAL(restart)
 }
 ///// TUTORIAL CODE BELOW /////
-function TUTORIAL(){
+function TUTORIAL(restart){
+    if (restart === true){closeTURORIAL()}//Bypasses Screen if restarting
     let TutorialDiv = document.getElementById('TutoralHere');
     TutorialDiv.innerHTML = TutorialPageOne;
     Page1NextPage()
@@ -97,20 +106,20 @@ function ChoosePlayerRoles() {
     function HideHTML(elementName) {elementName.style.display= 'none';}
     function ShowHTML(elementName) {elementName.style.display= 'block';} 
 
-    const addPlayerNameForm = document.getElementById('addPlayerNameForm');
+    const nameTextInput = document.getElementById('nameTextInput');
     const SubmitButton = document.getElementById('submitButton');
-    addPlayerNameForm.addEventListener("keyup",submitButtonWaitForInput,false);
-    addPlayerNameForm.addEventListener('submit', generatePlayerObject, false);
+    nameTextInput.addEventListener("keyup",submitButtonWaitForInput,false);
+    SubmitButton.addEventListener('click', generatePlayerObject, false);
 
     function submitButtonWaitForInput(event) {
-        if(addPlayerNameForm.name.value !== ''){document.getElementById('submitButton').disabled = false;}
+        if(nameTextInput.value !== ''){document.getElementById('submitButton').disabled = false;}
         else {document.getElementById('submitButton').disabled = true;}
     }
     function generatePlayerObject(event){
         event.preventDefault();
-        let PlayerNameString = addPlayerNameForm.name.value;
+        let PlayerNameString = nameTextInput.value;
         UpdatePlayerObjectWithName(playerListNum,PlayerNameString);
-        addPlayerNameForm.reset();
+        nameTextInput.value = "";
         CheckIfAllPlayersNamesIn();
         swichBackToButtons();
     }
@@ -130,7 +139,8 @@ function ChoosePlayerRoles() {
         newPlayerNameFormWindow.innerHTML = '';
         newGame()
     }
-    swichBackToButtons()    
+    swichBackToButtons()
+    CheckIfAllPlayersNamesIn()//This first helps with restarting the game from local storage 
 }
 
 
@@ -257,8 +267,8 @@ function newGame(vertical = 5, horizontal = 5) {
             gameState.playerList.currentPlayer[0]=gameState.playerList.GreenCaptain.name;
             gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewCaptian;
             gameState.playerList.currentPlayer[2]=gameState.playerList.GreenCaptain.role;
-            enableCaptainClue(gameState.greenTeamClueLog.runningLog);
-            HideFinishTurnButton();            
+            bannerToTextBox();
+            enableCaptainClue(gameState.greenTeamClueLog.runningLog);         
         } else{
             greenRemaining = cardQuantities[1];
             blueRemaining = cardQuantities[0];
@@ -266,8 +276,8 @@ function newGame(vertical = 5, horizontal = 5) {
             gameState.playerList.currentPlayer[0]=gameState.playerList.BlueCaptain.name;
             gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewCaptian;
             gameState.playerList.currentPlayer[2]=gameState.playerList.BlueCaptain.role;
-            enableCaptainClue(gameState.blueTeamClueLog.runningLog)
-            HideFinishTurnButton();            
+            bannerToTextBox();  
+            enableCaptainClue(gameState.blueTeamClueLog.runningLog)           
         }
         gameState.otherInfo.greenCardsLeft = greenRemaining;
         gameState.otherInfo.blueCardsLeft = blueRemaining;
@@ -311,24 +321,22 @@ function updateAll(){
         BlueScoreVariable.innerHTML = gameState.otherInfo.blueCardsLeft;
         GreenScoreVariable.innerHTML = gameState.otherInfo.greenCardsLeft;
     }
-    function updatePlayLogs() {
-        let greenPlayLog = document.getElementById("greenTeamLog");
-        let bluePlayLog = document.getElementById("blueTeamLog");
-        bluePlayLog.innerHTML = blueTeamLog();
-        greenPlayLog.innerHTML = greenTeamLog();
-    }
     function updateTeamRoster() {
         const blueTeamRoster = document.getElementById('blueTeamRoster');
-        blueTeamRoster.innerHTML = gameState.playerList.BlueCaptain.name + "<br>And<br>" + gameState.playerList.BlueFirstMate.name;
+        blueTeamRoster.innerHTML = gameState.playerList.BlueCaptain.name + "<br>- AND -<br>" + gameState.playerList.BlueFirstMate.name;
         const greenTeamRoster = document.getElementById('greenTeamRoster');
-        greenTeamRoster.innerHTML = gameState.playerList.GreenCaptain.name + "<br>And<br>" + gameState.playerList.GreenFirstMate.name;
+        greenTeamRoster.innerHTML = gameState.playerList.GreenCaptain.name + "<br>- AND -<br>" + gameState.playerList.GreenFirstMate.name;
     }
     function updateCurrentPlayerSign() {
         let CurrentPlayerVariable = document.getElementById("currentPlayerDisplay");
         CurrentPlayerVariable.innerHTML = "It is "+gameState.playerList.currentPlayer[0]+"'s Turn!";
         let currentPlayerBackgroundColor = document.getElementById('currentPlayerNameContainer');
-        if (gameState.otherInfo.currentTurn[0] === 'blue'){currentPlayerBackgroundColor.style.backgroundColor = '#3399ff';}
-        else if (gameState.otherInfo.currentTurn[0] === 'green'){currentPlayerBackgroundColor.style.backgroundColor = '#78b548';};
+        if (gameState.otherInfo.currentTurn[0] === 'blue'){
+            currentPlayerBackgroundColor.style.backgroundColor = '#3399ff';
+            currentPlayerBackgroundColor.style.border ="5px solid #10347c";
+        }else if (gameState.otherInfo.currentTurn[0] === 'green'){
+            currentPlayerBackgroundColor.style.backgroundColor = '#78b548';
+            currentPlayerBackgroundColor.style.border ="5px solid #1e5631";};
     }
     function reRenderCardsCurrentPlayer() { 
         let renderOrder = gameState.playerList.currentPlayer[1];
@@ -365,7 +373,7 @@ function updateAll(){
     
         let greenFoundHTML = ''
         for (i=0; i<gameState.otherInfo.greenFoundList.length; i++){
-            greenFoundHTML += gameState.otherInfo.greenFoundList[i] +"<br>"
+            greenFoundHTML += gameState.otherInfo.greenFoundList[i] +"<hr>"
         }
         if (gameState.otherInfo.greenFoundList.length === 0){greenFoundHTML = "<strong>Go Find your Pirate Crew!!!</strong>"}
         greenTeamFoundPiratesSpan.innerHTML = greenFoundHTML;
@@ -373,30 +381,17 @@ function updateAll(){
     function seeIfBlackGameOver(){
         if (gameState.otherInfo.blackFlipped === true){
             reRenderCardsGameOver()
+            GameOverBlack()
         }
     }    
     updateScoreBoard()
-    updatePlayLogs()
     updateTeamRoster()
     updateCurrentPlayerSign()
     reRenderCardsCurrentPlayer()
     checkForWinner()
     updateFoundPirateList()
     seeIfBlackGameOver()
-    const finishTurnButton = document.getElementById('finishTurnButton');
-    finishTurnButton.addEventListener("click",NextTurn,false);
-    if (parseInt(gameState.otherInfo.currentGuessAllowance) === 0){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
-    if (gameState.otherInfo.turnOver === true){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
-}
-
-///// The Following functions are used to hide and show different elements /////
-function ShowFinishTurnButton(){
-    const finishTurnButtonContainer = document.getElementById('finishTurnButtonContainer');
-    finishTurnButtonContainer.style.display = 'inline-block'
-}
-function HideFinishTurnButton(){
-    const finishTurnButtonContainer = document.getElementById('finishTurnButtonContainer');
-    finishTurnButtonContainer.style.display = 'none'
+    seeIfBlackGameOver()
 }
 
 function currentTurn() {
@@ -413,14 +408,14 @@ function currentTurnColor() {
 
 function blueTeamLog() {
     let logOutput = ""
-    let logLength = (gameState.blueTeamClueLog.runningLog).length
-    for (i=0;i<logLength;i += 1) {logOutput += (gameState.blueTeamClueLog.runningLog[i][0]+': '+gameState.blueTeamClueLog.runningLog[i][1]+'<br>')}      
+    let lastIndex = (gameState.blueTeamClueLog.runningLog).length;
+    if (lastIndex !==0){logOutput += (gameState.blueTeamClueLog.runningLog[lastIndex-1][0]+': '+gameState.blueTeamClueLog.runningLog[lastIndex-1][1])}         
     return logOutput
 }
 function greenTeamLog() {
     let logOutput = ""
-    let logLength = (gameState.greenTeamClueLog.runningLog).length
-    for (i=0;i<logLength;i += 1) {logOutput += (gameState.greenTeamClueLog.runningLog[i][0]+': '+gameState.greenTeamClueLog.runningLog[i][1]+'<br>')}      
+    let lastIndex = (gameState.greenTeamClueLog.runningLog).length
+    if (lastIndex !==0){logOutput += (gameState.greenTeamClueLog.runningLog[lastIndex-1][0]+': '+gameState.greenTeamClueLog.runningLog[lastIndex-1][1])}      
     return logOutput
 }
 
@@ -441,12 +436,15 @@ function NextTurn(){
     gameState.otherInfo.turnOver = false;
     if (gameState.otherInfo.currentTurn[0] === "blue" && gameState.otherInfo.currentTurn[1] === "capt"){
         gameState.otherInfo.currentTurn=["blue","firstM"];
+        bannerFromTextBox()
+        changeMainBanner("Clue: "+blueTeamLog())
         gameState.playerList.currentPlayer[0]=gameState.playerList.BlueFirstMate.name;
         gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewAllOthers;
         gameState.playerList.currentPlayer[2]=gameState.playerList.BlueFirstMate.role;
         
     } else if (gameState.otherInfo.currentTurn[0] === "blue" && gameState.otherInfo.currentTurn[1] === "firstM"){
         gameState.otherInfo.currentTurn=["green","capt"];
+        bannerToTextBox();
         gameState.playerList.currentPlayer[0]=gameState.playerList.GreenCaptain.name;
         gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewCaptian;
         gameState.playerList.currentPlayer[2]=gameState.playerList.GreenCaptain.role;
@@ -455,12 +453,15 @@ function NextTurn(){
         
     } else if (gameState.otherInfo.currentTurn[0] === "green" && gameState.otherInfo.currentTurn[1] === "capt"){
         gameState.otherInfo.currentTurn=["green","firstM"];
+        bannerFromTextBox()
+        changeMainBanner("Clue: "+greenTeamLog())
         gameState.playerList.currentPlayer[0]=gameState.playerList.GreenFirstMate.name;
         gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewAllOthers;
         gameState.playerList.currentPlayer[2]=gameState.playerList.GreenFirstMate.role;
         
     } else if (gameState.otherInfo.currentTurn[0] === "green" && gameState.otherInfo.currentTurn[1] === "firstM"){
         gameState.otherInfo.currentTurn=["blue","capt"];
+        bannerToTextBox();
         gameState.playerList.currentPlayer[0]=gameState.playerList.BlueCaptain.name;
         gameState.playerList.currentPlayer[1]=gameState.cardView.cardViewCaptian;
         gameState.playerList.currentPlayer[2]=gameState.playerList.BlueCaptain.role;
@@ -475,11 +476,8 @@ function NextTurn(){
 function togglePlayModeForPlayer() {
     if (gameState.playerList.currentPlayer[2] === "Captain"){
         disableTileClickEventListeners()
-        HideFinishTurnButton()
     } else if (gameState.playerList.currentPlayer[2] === "FirstMate"){
-        disableCaptainClue()
-        ShowFinishTurnButton()
-        enableTileClickEventListeners()
+        enableTileClickEventListeners();
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -503,8 +501,11 @@ function TileEventListenerLogic(event){
     gameState.cardView.cardViewAllOthers[cardSideIndex] = 'clicked';
     
     gameState.otherInfo.currentGuessAllowance -= 1;
-    disableTileClickEventListeners()
-    enableTileClickEventListeners()
+    if (parseInt(gameState.otherInfo.currentGuessAllowance) === 0){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
+    if (gameState.otherInfo.turnOver === true){disableTileClickEventListeners();makeFinishTurnButtonFlash()}
+    else{
+        disableTileClickEventListeners()
+        enableTileClickEventListeners()};
     updateAll();
 }
 function enableTileClickEventListeners() {
@@ -521,9 +522,6 @@ function disableTileClickEventListeners() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function enableCaptainClue(TeamLog){
-    let capInputContainer = document.getElementById('capInputContainer');
-    capInputContainer.innerHTML = captainInputHTMLstring;
-    capInputContainer.style.display = 'block';
     let CaptainsClue = document.getElementById('CaptainsClue');
     let dropDownNumberOfCards = document.getElementById('dropDownNumberOfCards');
     let submitCaptainClueButton = document.getElementById('submitCaptainClueButton');
@@ -539,17 +537,10 @@ function enableCaptainClue(TeamLog){
         TeamLog.push([CaptainsClue.value, dropDownNumberOfCards.value]);
         gameState.otherInfo.currentGuessAllowance = parseInt(dropDownNumberOfCards.value) + 1;
         CaptainsClue.value='';
-        dropDownNumberOfCards.value=''; 
-        capInputContainer.innerHTML = '';   
+        dropDownNumberOfCards.value='';    
         updateAll();
         NextTurn();
     }
-}
-function disableCaptainClue(){
-    let capInputContainer = document.getElementById('capInputContainer');
-    capInputContainer.innerHTML = '';
-    capInputContainer.style.display = 'none';
-    updateAll();    
 }
 
 function pushPirateNameToFoundPirateList(cardNumber){  
@@ -575,28 +566,30 @@ function pushPirateNameToFoundPirateList(cardNumber){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function inBetweenScreenPopupWindow(){
-    HideFinishTurnButton()
     let hidePlayerDisplay  = document.getElementById('currentPlayerNameContainer');
-    let hideCaptInput = document.getElementById('capInputContainer');
     hidePlayerDisplay.style.display = "none";
-    hideCaptInput.style.display = "none";
     let HideTheMain = document.getElementById('containerContainer');
     HideTheMain.style.display = 'none';
+    let HideTheTop = document.getElementById('topSection');
+    HideTheTop.style.display = 'none';    
     let InbetweenTurnPopupContainer = document.getElementById('InbetweenTurnPopupContainer');
     InbetweenTurnPopupContainer.style.display = 'block';
-    InbetweenTurnPopupContainer.innerHTML = '<div id=InbetweenPlayerPopupContainer><div id="helmSpinBetween" class="helmBetweenTurns"></div><div id="inBetweenTurnGoBackPlayer" class="gameModeButtons newPlayerbutton font1">'+gameState.playerList.currentPlayer[0]+'</div><br>'+'<button id="inBetweenTurnGoBackButton" class="gameModeButtons newPlayerbutton font1">Click to Start Turn</button></div>'
-
-    //transform: rotate(3600deg);
-
+    InbetweenTurnPopupContainer.innerHTML = '<div id=InbetweenPlayerPopupContainer><div id="helmSpinBetween" class="helmBetweenTurns"></div><div id="inBetweenTurnGoBackPlayer" class="gameModeButtons newPlayerbutton font1">'+gameState.playerList.currentPlayer[0]+'</div><br>'+'<button id="inBetweenTurnGoBackButton" class="gameModeButtons newPlayerbutton font1">Start Turn</button></div>'
 
     let helmSpinBetween = document.getElementById("helmSpinBetween");
-    document.addEventListener("mouseover", function() {messing()},false )
-    function messing(){
+    document.addEventListener("mouseover", function() {superSpin()},false )
+    function superSpin(){
         helmSpinBetween.style.transform = "rotate(3600deg)";
     }
    
-    if (gameState.otherInfo.currentTurn[0] === 'blue'){inBetweenTurnGoBackPlayer.style.backgroundColor = '#3399ff';}
-    else if (gameState.otherInfo.currentTurn[0] === 'green'){inBetweenTurnGoBackPlayer.style.backgroundColor = '#78b548';};
+    if (gameState.otherInfo.currentTurn[0] === 'blue'){
+        inBetweenTurnGoBackPlayer.style.backgroundColor = '#3399ff';
+        inBetweenTurnGoBackPlayer.style.border ="5px solid #10347c";
+    }
+    else if (gameState.otherInfo.currentTurn[0] === 'green'){
+        inBetweenTurnGoBackPlayer.style.backgroundColor = '#78b548';
+        inBetweenTurnGoBackPlayer.style.border ="5px solid #1e5631";
+    };
     let inBetweenTurnGoBackButton = document.getElementById('inBetweenTurnGoBackButton');
     inBetweenTurnGoBackButton.addEventListener("click", function() {closeInBetweenScreenPopupWindow()}, false);    
     function closeInBetweenScreenPopupWindow(){
@@ -605,8 +598,9 @@ function inBetweenScreenPopupWindow(){
         InbetweenTurnPopupContainer.innerHTML = "";
         InbetweenTurnPopupContainer.style.display = 'none';
         hidePlayerDisplay.style.display = "inline-block";
-        hideCaptInput.style.display = "block";
-        if (gameState.playerList.currentPlayer[2] === "FirstMate"){ShowFinishTurnButton()};
+        topSection.style.display = "flex";
+        //if (gameState.playerList.currentPlayer[2] === "FirstMate"){bannerFromTextBox()};
+        //if (gameState.playerList.currentPlayer[1] === "Captain"){bannerToTextBox()};
     }
 }
 
@@ -631,8 +625,7 @@ function reRenderCardsGameOver() {
     }
     disableTileClickEventListeners();
     
-    const turnFinishedBanner = document.getElementById("currentPlayerDisplay");
-    turnFinishedBanner.innerHTML = "Game Finished!";
+    
     let PlayAgainButton = document.getElementById("finishTurnButtonContainer");
     PlayAgainButton.innerHTML = "<div id='finishTurnButtonContainer'><button id='finishTurnButton' class='font1 finishTurnButton'>Play Again?</button></div>";
     PlayAgainButton.addEventListener('click', function(){PlayAgainButtonPress()},false)
@@ -643,12 +636,36 @@ function reRenderCardsGameOver() {
 }
 
 
-
-
-
-function GameOverBlack(){console.log("GameOver");}
-function GameOverGreenWins(){console.log("Green Wins!!!!!");}
-function GameOverBlueWins(){console.log("Blue Wins!!!!!");}
+function GameOverBlack(){
+    if (gameState.otherInfo.currentTurn[0] === 'green'){GameOverBlueWins()}
+    else if (gameState.otherInfo.currentTurn[0] === 'blue'){GameOverGreenWins()};
+}
+function GameOverGreenWins(){
+    let gameBackgroundColor = document.getElementById("htmlId");
+    gameBackgroundColor.className = "greenConfetti";
+    const turnFinishedBanner = document.getElementById("currentPlayerDisplay");
+    turnFinishedBanner.innerHTML = "Game Finished!";
+    const finalColor = document.getElementById("currentPlayerNameContainer");
+    finalColor.style.backgroundColor="rgb(120, 181, 72)";
+    changeMainBanner("Green Wins!!!!!")
+    let mainBannerNew = document.getElementById("topSection2");
+    mainBannerNew.style.backgroundColor = "#78b548";
+    mainBannerNew.style.borderColor = "#1e5631";
+    mainBannerNew.style.color = "black";
+}  
+function GameOverBlueWins(){
+    let gameBackgroundColor = document.getElementById("htmlId");
+    gameBackgroundColor.className = "blueConfetti";
+    const turnFinishedBanner = document.getElementById("currentPlayerDisplay");
+    turnFinishedBanner.innerHTML = "Game Finished!";
+    const finalColor = document.getElementById("currentPlayerNameContainer");
+    finalColor.style.backgroundColor="rgb(51, 153, 255)";
+    changeMainBanner("Blue Wins!!!!!")
+    let mainBannerNew = document.getElementById("topSection2");
+    mainBannerNew.style.backgroundColor = "#3399ff";
+    mainBannerNew.style.borderColor = "#10347c";
+    mainBannerNew.style.color = "black";
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function makeFinishTurnButtonFlash() {    
@@ -657,8 +674,8 @@ function makeFinishTurnButtonFlash() {
     turnFinishedBanner.innerHTML = "Turn Finished!";
     let speed = 500; 
     let flashingfinishTurnButton = document.getElementById('finishTurnButton');
-    function flashit(){flashingfinishTurnButton.style.borderColor = 'rgb(90, 90, 90)';}       
-    function flashBack(){flashingfinishTurnButton.style.borderColor = 'white';}
+    function flashit(){flashingfinishTurnButton.className = 'finishTurnButtonFlash font1';}       
+    function flashBack(){flashingfinishTurnButton.className = 'finishTurnButton font1';}
     setTimeout(flashit, speed);
     setTimeout(flashBack, speed*2);
     setTimeout(flashit, speed*3);
@@ -670,29 +687,60 @@ function makeFinishTurnButtonFlash() {
 };
 
 
-
-/*
-recode the form on the name pages.
-
-bluewins()
-greenWins()
-GameOverBlack()==oppositeWins
-inbetween Screen
-
-let PlayAgain = document.getElementById('finishTurnButtonContainer');
-PlayAgain.innerHTML = '<button id="finishTurnButton" class="font1 finishTurnButton" style="border-color: white;">Play Again!</button>';
-PlayAgain.addEventListener("click", function(){ResetToNewGame()}, false);
-
-Add animated dudes
-
-Clean Up all of the code
-//Card Flip https://www.youtube.com/watch?v=OV8MVmtgmoY
-*/
-
+//Saves player info to logal storage to make it so they can play another game without going through tutorial or name selection.
 function ResetToNewGame(){    
-    gameState.otherInfo = ResetGame.otherInfo;
-    gameState.blueTeamClueLog = ResetGame.blueTeamClueLog;
-    gameState.greenTeamClueLog = ResetGame.greenTeamClueLog;
-    gameState.cardView = ResetGame.cardView;
-    newGame()
+    localStorage.setItem('restartOption', "YES");
+    localStorage.setItem('savedPlayerList', JSON.stringify(gameState.playerList));
+    location.reload();
+}
+
+//Determines if restart and starts accordingly
+function main(){
+    let isThisARestart = localStorage.getItem('restartOption');
+    if (isThisARestart === "YES"){
+        let savedPlayerList = JSON.parse(localStorage.getItem('savedPlayerList'));
+        gameState.playerList = savedPlayerList;
+        localStorage.clear();
+        Start(true);
+    } else{
+        localStorage.clear();
+        Start();
+    }
+}
+main()
+
+
+function changeMainBanner(message){
+    let mainBannerNew = document.getElementById("TitleText");
+    mainBannerNew.innerHTML = message
+}
+
+function bannerToTextBox(){
+    let bannerToInput = document.getElementById("topSection2");
+    bannerToInput.innerHTML=`<input type="text" id="CaptainsClue" name="CaptainsClue" autofocus="" placeholder="Enter Clue Here!" maxlength="20" spellcheck="false">    <select name="dropDownNumberOfCards" class="font1 dropDownNumberOfCards" id="dropDownNumberOfCards">
+    <option value="0">0 Cards</option>
+    <option value="1">1 Cards</option>
+    <option value="2">2 Cards</option>
+    <option value="3">3 Cards</option>
+    <option value="4">4 Cards</option>
+    <option value="5">5 Cards</option>
+    <option value="6">6 Cards</option>
+    <option value="7">7 Cards</option>
+    <option value="8">8 Cards</option>
+    <option value="9">9 Cards</option>
+</select>`
+
+    let buttonChange = document.getElementById("topSection3");
+    buttonChange.innerHTML=`<button id="submitCaptainClueButton" class="submitAndFinishTurnButton font1">Submit and Finish Turn</button>`;
+}
+
+function bannerFromTextBox(){
+    let bannerRevert = document.getElementById("topSection2");
+    bannerRevert.innerHTML = `<h1 id="TitleText">The Legend of Pirate Island</h1>`;
+    let buttonChange = document.getElementById("topSection3");
+    buttonChange.innerHTML=`<div id='finishTurnButtonContainer'><button id='finishTurnButton' class='font1 finishTurnButton'>Finish Turn</button></div>`;
+    const finishTurnButton = document.getElementById('finishTurnButton');
+    finishTurnButton.addEventListener("click",NextTurn,false);
+    if (parseInt(gameState.otherInfo.currentGuessAllowance) === 0){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
+    if (gameState.otherInfo.turnOver === true){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
 }

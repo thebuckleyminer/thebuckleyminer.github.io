@@ -208,7 +208,6 @@ html{
     margin-bottom: 15px;
 }
 /* Tutorial CSS*/
-html{background-color: #036182;}
 .font1{font-family: 'Trade Winds', sans-serif;}  
 .font2{font-family: 'Open Sans', sans-serif;}
 .blue {background-image: url("./GameAssets/CardBackBlue.png");}
@@ -281,23 +280,23 @@ table{
     text-align: center;
     font-size: 1.25em;    
 }
+.blueBorderBlueTeam{border: 5px solid #10347c;}
+.greenBorderGreenTeam{border: 5px solid #1e5631;}
 .teamContainerBlue{
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.65em;
     background-color: #3399ff;
-    border: 5px solid white;
     color: black;
     margin-bottom: 10px;
 }
 .teamContainerGreen{
-    padding: 10px;
+    padding: 5px;
     border-radius: 50px;
     text-align: center;
-    font-size: 1.25em;
+    font-size: 1.65em;
     background-color: #78b548;
-    border: 5px solid white;
     color: black;
     margin-bottom: 10px;
 }
@@ -318,7 +317,7 @@ table{
     margin-top: 10px;
 }
 .FoundPirates{
-    font-size: 2em;
+    font-size: 1.45em;
     margin-left: 5px;
 }
 #blueContainer{
@@ -431,7 +430,8 @@ a:hover {
     font-size: 1.5em;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 50px;   
+    border-radius: 50px;  
+    outline: none; 
   }
 .greenButton{
     background-color: #78b548;
@@ -466,11 +466,12 @@ a:hover {
     background-color: #e2cca8;
     border: 5px solid #5e4117;
     color: #473111;    
+    outline: none;
 }
 .newPlayerSubmitButton:hover{
     color: #74572e;
 }
-::placeholder{color: #c4a271;}
+::placeholder{color: #5e4117;}
 input[type=text] {
 font-family: 'Trade Winds', sans-serif;
 background-color: #e2cca8;
@@ -480,11 +481,13 @@ border-radius: 50px;
 font-size: 2em;
 padding-left: 20px;
 outline:none;
+text-indent: 20px;
 }
 .roster{
     text-align: center;
     font-size: 1.5em;
     margin-bottom: 5px;
+    border-radius: 15px;
 }
 .classCenter{
     margin-left: auto;
@@ -511,16 +514,14 @@ outline:none;
 }
 #inBetweenTurnGoBackPlayer{
     border:5px solid white;
-    width: 10%;
     background-color: black;   
     color: black; 
-    padding: 10px;
+    padding: 5px 30px;
     border-radius: 50px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    font-size: 1.5em;
+    font-size: 2.5em;
 }
 #InbetweenPlayerPopupContainer{
     width: 50%;
@@ -529,22 +530,24 @@ outline:none;
     margin-right: auto;
 }
 .submitAndFinishTurnButton{
+    width: 100%;
     border: 5px solid rgb(90, 90, 90);
     background-color: black;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.5em;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 50px;  
-    outline:none;
+    border-radius: 50px;
+    outline: none;
 }
 .submitAndFinishTurnButton:hover{
     border: 5px solid rgb(130, 130, 130);
     color: rgb(130, 130, 130);
+    
 }
 .submitAndFinishTurnButton:disabled{
     background-color: #e2cca8;
@@ -552,11 +555,10 @@ outline:none;
 .dropDownNumberOfCards {
     background-color: #e2cca8;
     color:#5e4117;
-    border: 5px #5e4117 solid;
-    width: 50px;
+    border: 0px #5e4117 solid;
     height: 60px;
     font-size: 1.5em;
-    border-radius: 20px;
+    border-radius: 10px;
     outline:none;
 }
 #CaptainsInput{
@@ -574,8 +576,21 @@ outline:none;
     margin: 5px 15px;
     font-size: 1.5em;
 }
-#CaptainsInput #CaptainsClue{
+#CaptainsInput{
     margin: 5px 15px;   
+}
+#CaptainsClue{
+    width: 60%;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+    font-size: 2em;
+    outline: none;
+    border: 5px solid rgba(0,0,0,0);
+    border: 0px;
+    font-size: 2em;
+    padding-left: 2px;
+    outline: none;
+    text-indent: 0px;
 }
 #CaptainsInput #submitCaptainClueButton{
     margin: 5px 15px;   
@@ -641,15 +656,55 @@ body{margin: 0;padding:0;}
 .finishTurnButton:hover{
     border: 5px solid rgb(90, 90, 90);
 }
+.finishTurnButtonFlash{
+    border: 5px solid rgb(90, 90, 90);
+    border-radius: 50px; 
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    outline:none;
+    font-size: 1.5em;
+    width: 100%;
+}
 .helmBetweenTurns{
     background-image: url(./TutorialAssets/Helm.png);
     background-repeat: no-repeat;
     background-size: contain;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     transition-duration: 180s;
     transition-property: transform;
+    margin:60px auto;
+}
+#inBetweenTurnGoBackButton{
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;  
+    outline: none; 
+}
+
+
+.blueConfetti{
+    background-image: url("./GameAssets/BlueConfetti.jpg");
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 25px;
+    background-repeat: auto;
+    background-size:40%;
+    background-color: white;
 }
+.greenConfetti{
+    background-image: url("./GameAssets/GreenConfetti.jpg");
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: auto;
+    background-size:40%;
+    background-color: white;
+}
+#preloadConfetti{opacity: 0.000000000005;}

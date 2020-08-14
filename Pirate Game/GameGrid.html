@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlId">
     <head>
         <Title>Wilkinson Pirate Game</Title>
         <meta charset="utf-8">
@@ -12,26 +12,23 @@
     <body>
         <div id="topSection">
             <div id="topSection1"><div id='currentPlayerNameContainer' class='font1'><span id='currentPlayerDisplay'>Player-Name-Logic-Here</span></div></div>            
-            <div id="topSection2" class=" font1"><h1>The Legend of Pirate Island</h1></div>                         
+            <div id="topSection2" class=" font1"><h1 id="TitleText">The Legend of Pirate Island</h1></div>                         
             <div id="topSection3"><div id='finishTurnButtonContainer'><button id='finishTurnButton' class='font1 finishTurnButton'>Finish Turn</button></div></div>
         </div>
 
         <div id="TutoralHere"></div><!--The tutorial is loaded here-->
-        <div id="GameStartupOptionWindows" class="font1 classCenter"></div> <!--The startup is loaded here-->
+        <div id="GameStartupOptionWindows" class="fontTypeOne classCenter"></div> <!--The startup is loaded here-->
         <div id='InbetweenTurnPopupContainer'></div><!--This hides the game and waits for the next player!-->
         <div id=containerContainer></div> <!--This is where the game is loaded-->
-        <div id='capInputContainer'></div> <!--This is where captains give their clue-->
+
 
         <audio autoplay><!--An audio clip to satisfy the requirement of incorporating a HTML5 Tag-->
-<<<<<<< HEAD
             <source src="./GameAssets/SemesterGameCustomSound(reducedVolume).mp3" type="audio/mpeg">
-=======
-            <source src="./AssetsFromOtherSources/Waves.mp3" type="audio/mpeg">
->>>>>>> b70032a895dd4e20c7908ff23074520caae9cb90
         </audio>
-
+        <div id="preloadConfetti" class="blueConfetti greenConfetti"></div>
     </body>
     <script src='innerHTMLhtml.js'></script>
     <script src="model.js"></script>
     <script src="view.js"></script>
+
 </html>
