@@ -87,7 +87,7 @@ const TutorialPageFive = `
             <div class="exampleCardFront_3 exampleCardWordsPicture hoverThree"></div>
             <div class="exampleCardFront_4 exampleCardWordsPicture hoverFour"></div>
         </div>
-        <p>The <strong>First Mate</strong> can see only see the top side of the recruit cards. (Tan)</p>
+        <p>The <strong>First Mate</strong> can only see the top side of the recruit cards. (Tan)</p>
         <hr>
         <div class="TutorialRow">
             <div class="exampleCardBack_1 exampleCardWordsPicture hoverOne"></div>
@@ -136,7 +136,7 @@ const TutorialPageSeven = `
         </div>        
         <div id="PageSevenText">
             <hr>
-            <p>The <strong>First Mate</strong> is in charge recruiting based on the <strong>Captain's</strong> Commands. The <strong>First Mate</strong> may recruit any of the twenty five cards that have not been previously recruited. 
+            <p>The <strong>First Mate</strong> is in charge of recruiting based on the <strong>Captain's</strong> Commands. The <strong>First Mate</strong> may recruit any of the twenty five cards that have not been previously recruited. 
             The <strong>First Mate</strong> may recruit up to one more than the <strong>Captain</strong> issued with his Command, as well as the option to play it safe and finish your turn any time.
             </p>
             <hr>
@@ -158,7 +158,7 @@ const TutorialPageEight = `
         </div>        
         <div id="PageEightText">
             <ul>
-                <li>If the <strong>First Mate</strong> accidentally recruits a Tan recruit card, the person ends up to not actually a Pirate and the turn is over.</li>
+                <li>If the <strong>First Mate</strong> accidentally recruits a Tan recruit card, the person ends up not actually a being Pirate and the turn is over.</li>
                 <hr>
                 <li>Likewise, if the <strong>First Mate</strong> chooses a card of the other Crew's color, the Pirate will join the other Crew and the recruiting turn is over.</li>
                 <hr>
@@ -211,7 +211,7 @@ const gameTypeButtonsHTMLstring =`
 <div id=TEMPTESTINGBYPASS> <button id=TEMPTESTINGBYPASSbutton>This is the: "Bypass this name selection with preselected names" Button!</button></div>
 `
 const buttonsHTMLstring=`
-<h1 class='whiteText'>Every successful ship is lead by a Captain and a First Mate!</h1>
+<h1 class='whiteText'>Every successful ship is led by a Captain and a First Mate!</h1>
 <div id='playerSelectionButtonContainer'>
     <h2 class='whiteText'> Who do ye wish to be? (Choose your player below) </h2>
     <div id='roleButtonDivision class='classCenter'>

@@ -26,7 +26,7 @@
                 The game starts off with an optional tutorial where you navigate through by clicking a next button.
                 Because this is a four player game each of four players have a text entry box to input their names to keep track of turns.
                 There are four buttons to select roles, and after one is taken it disappears until none are left.
-                Similar to Battleship it is important that the other players can not see certain aspects when it is not their turn. My solution to this is a popup screen with a button to start a turn which goes back to the game grid for the certain players view.
+                Similar to Battleship it is important that the other players can not see certain aspects when it is not their turn. My solution to this is a popup screen with a button to start a turn which goes back to the game grid for the certain player's view.
                 In the top right corner on the Game Grid page is where the button is located to either finish the turn, submit the clue and finish turn, or play the game again once the game has ended. 
                 Lastly the Captain Role players give clues to the players. This element of gameplay includes both a text box for entering a clue as well as a select menu for choosing the number of cards that clue is applicable to.
 
@@ -34,13 +34,13 @@
                 <h3>20	User input in the form of mouse clicks</h3>
                 The primary use of mouse clicks and event listeners in my program is for the player to select a recruit card.
                 When a recruit card is clicked it the game logic transforms the recruit card from the front side to the back side.
-                Only First Mates can can click cards on their turn, and they can only click up to one more than the Captain's Command will allow.
+                Only First Mates can click cards on their turn, and they can only click up to one more than the Captain's Command will allow.
                 Or the game will immediately end if the Black recruit card is selected, or their turn will end if a recruit card not of their crew color is selected.
                 I have also used many mouse clicks and event listeners for all of the buttons.
 
                 <h3>20	Dynamic modification of HTML using innerHTML or DOM functions</h3>
                 The whole game grid is generated in JavaScript and then is inserted using innerHTML.
-                The pre-game tutorial menus, name selection menus, and in between turn display make use of innerHTML and DOM functions.
+                The pre-game tutorial menus, name selection menus, and in between turn displays make use of innerHTML and DOM functions.
                 The most essential aspect of the dynamic modification though is the dynamic gameplay aspects of the Score(cards remaining), Found Pirate List, Current Player name, role, and color, as well as many other parts that change as the game progresses such as the cards.
 
                 <h3>20 Use of XMLHttpRequest to load JSON or XML game data that is displayed on the grid Page</h3>
@@ -72,7 +72,7 @@
                 <h3>20	Extra Credit Include a second HTML5 component. If your first HTML5 component is media (audio or video) then your second component can't be a media component.</h3>
                 For this requirement I implemented the HTML 5 local storage for the purposes if the players want to play another game. This works by storing their names and a restart value to local storage.
                 When the game is now rebooted the game bypasses the tutorial and player name sections straight to a freshly generated board.
-                The local storage is then cleared immediately after loaded, so when the game is refreshed or is opened at a later date it will start fresh and not load in this manner.
+                The local storage is then cleared immediately after loading, so when the game is refreshed or is opened at a later date it will start fresh and not load in this manner.
                 Thus the restart game only works when the restart game button is pressed.
                 <br>
                 <h3>250	TOTAL</h3>
