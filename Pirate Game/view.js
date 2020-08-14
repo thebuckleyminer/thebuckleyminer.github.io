@@ -64,8 +64,13 @@ function TUTORIAL(restart){
     }
     function Page8NextPage(){
         TutorialDiv.innerHTML = TutorialPageEight;
-        let Page7NextButton = document.getElementById("Page8Next");
-        Page7NextButton.addEventListener("click",function() {closeTURORIAL()},false);
+        let Page8NextButton = document.getElementById("Page8Next");
+        Page8NextButton.addEventListener("click",function() {Page9NextPage()},false);
+    }
+    function Page9NextPage(){
+        TutorialDiv.innerHTML = TutorialPageNine;
+        let Page9NextButton = document.getElementById("Page9Next");
+        Page9NextButton.addEventListener("click",function() {closeTURORIAL()},false);
     }
 }
 function closeTURORIAL(){
@@ -578,7 +583,7 @@ function inBetweenScreenPopupWindow(){
     HideTheTop.style.display = 'none';    
     let InbetweenTurnPopupContainer = document.getElementById('InbetweenTurnPopupContainer');
     InbetweenTurnPopupContainer.style.display = 'block';
-    InbetweenTurnPopupContainer.innerHTML = '<div id=InbetweenPlayerPopupContainer><div id="helmSpinBetween" class="helmBetweenTurns"></div><div id="inBetweenTurnGoBackPlayer" class="gameModeButtons newPlayerbutton font1">'+gameState.playerList.currentPlayer[0]+'</div><br>'+'<button id="inBetweenTurnGoBackButton" class="gameModeButtons newPlayerbutton font1">Start Turn</button></div>'
+    InbetweenTurnPopupContainer.innerHTML = '<div id=InbetweenPlayerPopupContainer><div id="helmSpinBetween" class="helmBetweenTurns"></div><div id="inBetweenTurnGoBackPlayer" class="gameModeButtons newPlayerbutton font1">'+gameState.playerList.currentPlayer[0]+' you are up!</div><br>'+'<button id="inBetweenTurnGoBackButton" class="gameModeButtons newPlayerbutton font1">Start Turn</button></div>'
 
     let helmSpinBetween = document.getElementById("helmSpinBetween");
     document.addEventListener("mouseover", function() {superSpin()},false )

@@ -57,18 +57,19 @@ html{
 }
 .UniversalNextButton{
     background-color: #e2cca8;
-    border: 10px solid #623910;
-    width: 15%;
+    border: 7px solid #623910;
+    width: 20%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 3em;
     margin: 4px 10px;
+    margin-bottom: 20px;
     cursor: pointer;
     border-radius: 50px;
     outline: none;    
     text-align: center;
-    box-shadow: 10px 10px  #2e1c00;
+    box-shadow: 5px 5px  #2e1c00;
 }
 .UniversalNextButton:hover{
     box-shadow: 5px 5px #2e1c00;
@@ -130,6 +131,7 @@ html{
     margin-right: auto;  
     display: inline-block;
 }
+.piratePictureLarge:hover{transform: translateY(-25px);}
 .piratePictureSmall{
     background-repeat: no-repeat;
     background-size: contain;
@@ -142,6 +144,7 @@ html{
     margin-right: auto;  
     display: inline-block;
 }
+.piratePictureSmall:hover{transform: translateY(-25px);}
 .greenTeamExample{background-image: url(./TutorialAssets/Green_Team.png);transform: rotate(-14deg);}
 .blueTeamExample{background-image: url(./TutorialAssets/Blue_Team.png);transform: rotate(14deg);}
 .greenTeamExample:hover{transform: translateX(-25px);}
@@ -692,7 +695,7 @@ body{margin: 0;padding:0;}
     width: 100%;
 }
 .helmBetweenTurns{
-    background-image: url(./TutorialAssets/Helm.png);
+    background-image: url(./GameAssets/HelmLighterBlue.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 500px;
@@ -707,7 +710,7 @@ body{margin: 0;padding:0;}
     text-decoration: none;
     display: inline-block;
     font-size: 2em;
-    margin: 4px 2px;
+    margin: 10px 2px;
     cursor: pointer;
     border-radius: 50px;  
     outline: none; 

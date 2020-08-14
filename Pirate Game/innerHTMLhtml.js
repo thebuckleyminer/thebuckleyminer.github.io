@@ -38,7 +38,7 @@ const TutorialPageTwo = `
                 </div>
             </div>
             <div class="UniversalNextButtonContainer">
-                <button id="Page2Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+                <button id="Page2Next" class="UniversalNextButton fontTypeTwo">Next</button>
             </div>
         </div>`
 const TutorialPageThree =`
@@ -55,7 +55,7 @@ const TutorialPageThree =`
     </div>
 </div>
 <div class="UniversalNextButtonContainer">
-    <button id="Page3Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+    <button id="Page3Next" class="UniversalNextButton fontTypeTwo">Next</button>
 </div>
 </div>`
 const TutorialPageFour = `
@@ -75,7 +75,7 @@ const TutorialPageFour = `
     </div>
 </div>
 <div class="UniversalNextButtonContainer">
-    <button id="Page4Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+    <button id="Page4Next" class="UniversalNextButton fontTypeTwo">Next</button>
 </div>
 </div>`
 const TutorialPageFive = `
@@ -87,7 +87,7 @@ const TutorialPageFive = `
             <div class="exampleCardFront_3 exampleCardWordsPicture hoverThree"></div>
             <div class="exampleCardFront_4 exampleCardWordsPicture hoverFour"></div>
         </div>
-        <p>The <strong>First Mate</strong> can see only see the top side of the recuit cards. (Tan)</p>
+        <p>The <strong>First Mate</strong> can see only see the top side of the recruit cards. (Tan)</p>
         <hr>
         <div class="TutorialRow">
             <div class="exampleCardBack_1 exampleCardWordsPicture hoverOne"></div>
@@ -96,13 +96,12 @@ const TutorialPageFive = `
             <div class="exampleCardBack_4 exampleCardWordsPicture hoverFour"></div>
         </div>
         <div id="PageFiveText">
-            <br>
-            <p>The <strong>Captain</strong> can see the bottom side, and which Crew the recuit will actually join.</p>  
+            <p>The <strong>Captain</strong> sees the bottom side. (The Crew the recruit will actually join)</p>  
             <hr>           
         </div>
     </div>
     <div class="UniversalNextButtonContainer">
-        <button id="Page5Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+        <button id="Page5Next" class="UniversalNextButton fontTypeTwo">Next</button>
     </div>
 </div>`
 const TutorialPageSix = `
@@ -115,15 +114,15 @@ const TutorialPageSix = `
             <div class="exampleCardBack_4 exampleCardWordsPicture hoverFour"></div>
         </div>
         <div id="PageSixText">
-            <br>
-            <p>The <strong>Captain</strong> being able to see the back sides of the cards needs to give careful directions to the First Mate on who to go out and recuit. 
-            The goal of the Captain is to give a direction that your First Mate can guess as many of your cards as possiable without attemting to get a Pirate from another Crew color to join your team.</p>
+            <p>The <strong>Captain</strong> being able to see the back sides of the cards needs to give careful Commands (clues) to the <strong>First Mate</strong> regarding who to go out and recruit. </p>
             <hr>
-            <p>***The description (clue) can only be one to two words max! The clue can not contain words on the cards.***</p>               
+            <p>The goal of the <strong>Captain</strong> is to give a Command spicific enough so the <strong>First Mate</strong> does not recruit the wrong Pirates.</p>
+            <hr>
+            <p>The Command is a clue with the maximum of two words. The two words are followed by the number of recruit cards the Command is applicable to. The clue may not contain a word displayed on a recruit card.</p>               
         </div>
     </div>
     <div class="UniversalNextButtonContainer">
-        <button id="Page6Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+        <button id="Page6Next" class="UniversalNextButton fontTypeTwo">Next</button>
     </div>
 </div>`
 const TutorialPageSeven = `
@@ -136,21 +135,16 @@ const TutorialPageSeven = `
             <div class="exampleCardFront_4 exampleCardWordsPicture hoverFour"></div>
         </div>        
         <div id="PageSevenText">
-            <br>
-            <p>The <strong>First Mate</strong> is in charge of picking the recuit cards based on the Captains direction. You may choose any of the twenty five cards that have not been flipped yet
-            and click on one to flip it. You have the option to not take a chcance and end your turn immediatly, or you can choose as many as you would like up to one more than the Captain said
-            match his description.</p>
             <hr>
-            <ul>
-                <li>If you accedently select a Tan card, they will decline the Pirate life and your turn is over.</li>
-                <li>Likewise, if you select a card of the other teams color, the Pirate will join the other crew and your turn will be over.</li>
-                <li>Lastly, if you select the Black card, the game is instantly over and the other team wins.</li>
-                <li>As long as you click on your teams color Pirate Cards, you will be able to continue guessing up until the Captains description number plus one.</li>
-            </ul>                            
+            <p>The <strong>First Mate</strong> is in charge recruiting based on the <strong>Captain's</strong> Commands. The <strong>First Mate</strong> may recruit any of the twenty five cards that have not been previously recruited. 
+            The <strong>First Mate</strong> may recruit up to one more than the <strong>Captain</strong> issued with his Command, as well as the option to play it safe and finish your turn any time.
+            </p>
+            <hr>
+                           
         </div>
     </div>    
     <div class="UniversalNextButtonContainer">
-        <button id="Page7Next" class="UniversalNextButton fontTypeTwo"><strong>Next</strong></button>
+        <button id="Page7Next" class="UniversalNextButton fontTypeTwo">Next</button>
     </div>
 </div>`
 const TutorialPageEight = `
@@ -163,14 +157,45 @@ const TutorialPageEight = `
             <div class="exampleCardFront_4 exampleCardWordsPicture hoverFour"></div>
         </div>        
         <div id="PageEightText">
-            <br>
+            <ul>
+                <li>If the <strong>First Mate</strong> accedently recruits a Tan recruit card, the person ends up to not actually a Pirate and the turn is over.</li>
+                <hr>
+                <li>Likewise, if the <strong>First Mate</strong> chooses a card of the other Crew's color, the Pirate will join the other Crew and the recruiting turn is over.</li>
+                <hr>
+                <li>Ye be warned, if you select the Feared Black Pirate recruit card, the game is instantly over and the other team wins.</li>
+                <hr>
+                <li>As long as the <strong>First Mate</strong> clicks on their teams color Pirate Cards, they will be able to continue guessing up until the Captains description number plus one.</li>
+                <hr>
+            </ul>                          
+        </div>
+    </div>    
+    <div class="UniversalNextButtonContainer">
+        <button id="Page8Next" class="UniversalNextButton fontTypeTwo">Next</button>
+    </div>
+</div>`
+const TutorialPageNine = `
+<div id="TutorialPage9">
+    <div class="darkTanBackground">
+        <div class="TutorialRow">
+            <div class="Pirate_1 piratePictureLarge"></div>
+            <div class="Pirate_2 piratePicture"></div>
+            <div class="Pirate_3 piratePicture"></div>
+            <div class="Pirate_4 piratePicture"></div>
+            <div class="Pirate_5 piratePicture"></div>
+            <div class="Pirate_6 piratePicture"></div>
+            <div class="Pirate_7 piratePicture"></div>
+            <div class="Pirate_8 piratePicture"></div>
+            <div class="Pirate_9 piratePicture"></div>
+            <div class="Pirate_10 piratePictureSmall"></div>
+        </div>      
+        <div id="PageNineText">
             <p>That is it! You are done with the Tutorial!</p>
             <hr>
             <p><strong>Good Luck!</strong></p>                           
         </div>
     </div>    
     <div class="UniversalNextButtonContainer">
-        <button id="Page8Next" class="UniversalNextButton fontTypeTwo"><strong>Done!</strong></button>
+        <button id="Page9Next" class="UniversalNextButton fontTypeTwo">Done!</button>
     </div>
 </div>`
 
@@ -195,7 +220,11 @@ const buttonsHTMLstring=`
         <button id='BlueFirstMateJoinButton' class ='blueButton newPlayerbutton font1'>The Blue First Mate</button>
         <button id='GreenFirstMateJoinButton' class ='greenButton newPlayerbutton font1'>The Green First Mate</button>
     </div>       
-</div>`
+</div>
+<br>
+<br>
+<h2 class='whiteText'> In this turn based game it is important to not see the other players screen. </h2>
+<h2 class='whiteText'> Please inform the next player that it is their turn when your turn is complete. </h2>`
 
 const nameFourmHTMLstring =`
 <div id='addPlayerNameForm' >
