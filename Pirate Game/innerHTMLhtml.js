@@ -116,7 +116,7 @@ const TutorialPageSix = `
         <div id="PageSixText">
             <p>The <strong>Captain</strong> being able to see the back sides of the cards needs to give careful Commands (clues) to the <strong>First Mate</strong> regarding who to go out and recruit. </p>
             <hr>
-            <p>The goal of the <strong>Captain</strong> is to give a Command spicific enough so the <strong>First Mate</strong> does not recruit the wrong Pirates.</p>
+            <p>The goal of the <strong>Captain</strong> is to give a Command specific enough so the <strong>First Mate</strong> does not recruit the wrong Pirates.</p>
             <hr>
             <p>The Command is a clue with the maximum of two words. The two words are followed by the number of recruit cards the Command is applicable to. The clue may not contain a word displayed on a recruit card.</p>               
         </div>
@@ -158,13 +158,13 @@ const TutorialPageEight = `
         </div>        
         <div id="PageEightText">
             <ul>
-                <li>If the <strong>First Mate</strong> accedently recruits a Tan recruit card, the person ends up to not actually a Pirate and the turn is over.</li>
+                <li>If the <strong>First Mate</strong> accidentally recruits a Tan recruit card, the person ends up to not actually a Pirate and the turn is over.</li>
                 <hr>
                 <li>Likewise, if the <strong>First Mate</strong> chooses a card of the other Crew's color, the Pirate will join the other Crew and the recruiting turn is over.</li>
                 <hr>
                 <li>Ye be warned, if you select the Feared Black Pirate recruit card, the game is instantly over and the other team wins.</li>
                 <hr>
-                <li>As long as the <strong>First Mate</strong> clicks on their teams color Pirate Cards, they will be able to continue guessing up until the Captains description number plus one.</li>
+                <li>As long as the <strong>First Mate</strong> clicks on their team's color Pirate Cards, they will be able to continue guessing up until the Captains description number plus one.</li>
                 <hr>
             </ul>                          
         </div>
