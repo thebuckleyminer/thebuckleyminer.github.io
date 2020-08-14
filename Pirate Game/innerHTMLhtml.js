@@ -223,7 +223,18 @@ const mainGameHTMLstring =`
     <div id=greenTeamFoundPirates class='foundPiratesContainer font1 greenBorderGreenTeam'><span class="FoundPirates">Found Pirates:</span><br><span id=greenTeamFoundPiratesSpan>Found-Pirate-List-Here</span></div>  
 </div>
 `
-
+let captainClueHTMLstring=`<input type="text" id="CaptainsClue" name="CaptainsClue" autofocus="" placeholder="Enter Clue Here!" maxlength="20" spellcheck="false">    <select name="dropDownNumberOfCards" class="font1 dropDownNumberOfCards" id="dropDownNumberOfCards">
+<option value="0">0 Cards</option>
+<option value="1">1 Cards</option>
+<option value="2">2 Cards</option>
+<option value="3">3 Cards</option>
+<option value="4">4 Cards</option>
+<option value="5">5 Cards</option>
+<option value="6">6 Cards</option>
+<option value="7">7 Cards</option>
+<option value="8">8 Cards</option>
+<option value="9">9 Cards</option>
+</select>`
 
 let foundGreenPirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];
 let foundBluePirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];

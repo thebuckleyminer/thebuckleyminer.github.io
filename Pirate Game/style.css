@@ -59,7 +59,6 @@ html{
     background-color: #e2cca8;
     border: 10px solid #623910;
     width: 15%;
-    padding: 5px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -570,13 +569,13 @@ text-indent: 20px;
     color: rgb(130, 130, 130);
 }
 .dropDownNumberOfCards {
-    background-color: #e2cca8;
-    color:#5e4117;
-    border: 0px #5e4117 solid;
+    background-color: #debf8d;
+    color: #5e4117;
+    border: 5px #5e4117 solid;
     height: 60px;
     font-size: 1.5em;
     border-radius: 10px;
-    outline:none;
+    outline: none;
 }
 #CaptainsInput{
     background-color: #c7a66c;
@@ -597,9 +596,9 @@ text-indent: 20px;
     margin: 5px 15px;   
 }
 #CaptainsClue{
-    width: 60%;
-    text-align: center;
-    background-color: rgba(0,0,0,0);
+    text-align: left;
+    text-indent: 20px;
+    background-color: #debf8d;
     font-size: 2em;
     outline: none;
     border: 5px solid rgba(0,0,0,0);
@@ -607,7 +606,7 @@ text-indent: 20px;
     font-size: 2em;
     padding-left: 2px;
     outline: none;
-    text-indent: 0px;
+    border: 5px #5e4117 solid;
 }
 #CaptainsInput #submitCaptainClueButton{
     margin: 5px 15px;   
@@ -639,7 +638,7 @@ body{margin: 0;padding:0;}
     text-align: center;
     margin: 0px;    
 }
-#topSection2 {
+.topSection2 {
     border-radius: 50px;
     width: 40%;    
     text-align: center;
@@ -647,6 +646,10 @@ body{margin: 0;padding:0;}
     border: 5px solid #5e4117;
     color: #473111;
     box-shadow: 5px 5px #2e1c00;
+}
+.topSection2alternate {
+    width: 40%;    
+    text-align: center;
 }
 #topSection2 h1{
     margin: 0;padding: 0;

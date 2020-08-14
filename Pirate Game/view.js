@@ -727,19 +727,8 @@ function changeMainBanner(message){
 
 function bannerToTextBox(){
     let bannerToInput = document.getElementById("topSection2");
-    bannerToInput.innerHTML=`<input type="text" id="CaptainsClue" name="CaptainsClue" autofocus="" placeholder="Enter Clue Here!" maxlength="20" spellcheck="false">    <select name="dropDownNumberOfCards" class="font1 dropDownNumberOfCards" id="dropDownNumberOfCards">
-    <option value="0">0 Cards</option>
-    <option value="1">1 Cards</option>
-    <option value="2">2 Cards</option>
-    <option value="3">3 Cards</option>
-    <option value="4">4 Cards</option>
-    <option value="5">5 Cards</option>
-    <option value="6">6 Cards</option>
-    <option value="7">7 Cards</option>
-    <option value="8">8 Cards</option>
-    <option value="9">9 Cards</option>
-</select>`
-
+    bannerToInput.className = 'topSection2alternate font1';
+    bannerToInput.innerHTML=captainClueHTMLstring;
     let buttonChange = document.getElementById("topSection3");
     buttonChange.innerHTML=`<button id="submitCaptainClueButton" class="submitAndFinishTurnButton font1">Submit and Finish Turn</button>`;
 }
@@ -747,6 +736,7 @@ function bannerToTextBox(){
 function bannerFromTextBox(){
     let bannerRevert = document.getElementById("topSection2");
     bannerRevert.innerHTML = `<h1 id="TitleText">The Legend of Pirate Island</h1>`;
+    bannerRevert.className = 'topSection2 font1';
     let buttonChange = document.getElementById("topSection3");
     buttonChange.innerHTML=`<div id='finishTurnButtonContainer'><button id='finishTurnButton' class='font1 finishTurnButton'>Finish Turn</button></div>`;
     const finishTurnButton = document.getElementById('finishTurnButton');
