@@ -1,5 +1,5 @@
 
-
+// Update if player gets all siz
 //InmplementPlayers
 //Make it look nice
 //cant select like 2 threes if there are three or more (only on 2,3,4,and 6)
@@ -79,7 +79,9 @@ function calculateScore(diceTally){
     let i = diceTally;
     let diceMathScore = 0;
     if(i[1]===6||i[2]===6||i[3]===6||i[4]===6||i[5]===6||i[6]===6){diceMathScore+=100000000}
-    else if(i[1]===1&&i[2]===1&&i[3]===1&&i[4]===1&&i[5]===1&&i[6]===1){diceMathScore+= 1500}
+    else if(i[1]===1&&i[2]===1&&i[3]===1&&i[4]===1&&i[5]===1&&i[6]===1){
+        diceMathScore+= 1500,maxSelectable[1]=1,maxSelectable[2]=1,maxSelectable[3]=1,maxSelectable[4]=1,maxSelectable[5]=1,maxSelectable[6]=1
+    }
     else{
         if(i[1]>=3){diceMathScore += 1000+((i[1]%3)*100),maxSelectable[1]=3 + i[1]%3}
         else{diceMathScore += i[1]*100,maxSelectable[1]=i[1]}
