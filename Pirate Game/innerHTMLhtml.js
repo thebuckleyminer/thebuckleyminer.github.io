@@ -267,28 +267,3 @@ let captainClueHTMLstring=`<input type="text" id="CaptainsClue" name="CaptainsCl
 
 let foundGreenPirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];
 let foundBluePirateRoleList = ['Quartermaster', 'Navigator', 'Pilot', 'Master Gunner', 'Striker', 'Master', 'Powder Monkey', 'Rigger', 'Cook', 'shark'];
-
-const ResetGame = {   
-    otherInfo: {
-        "startingTeam":"blue",
-        "currentTurn": ['',''],
-        "gameOver":false,
-        "greenCardsLeft":3,
-        "blueCardsLeft":5,
-        "playerRole": "Captain",
-        "showBackColorSide":true,
-        "showClueInputControls":false,
-        'blueFoundList':[],
-        'greenFoundList':[],
-        "currentGuessAllowance": 1,     
-        "blackFlipped":false, 
-        "turnOver":false,  
-    },    
-    blueTeamClueLog: {"runningLog" : []},    
-    greenTeamClueLog: {"runningLog" : []},
-    cardView: {
-        'cardViewCaptian': ['b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b'],
-        'cardViewAllOthers': ['f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f'],
-        'alreadyClicked': [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-    }, 
-}

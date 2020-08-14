@@ -1,14 +1,6 @@
 //Christopher Wilkinson
 //Semester Project
 
-
-
-
-
-
-
-
-
 function Start(restart=false){
     const currentPlayerNameContainer = document.getElementById('currentPlayerNameContainer');
     currentPlayerNameContainer.style.display = 'none';
@@ -636,7 +628,6 @@ function reRenderCardsGameOver() {
     }
     disableTileClickEventListeners();
     
-    
     let PlayAgainButton = document.getElementById("finishTurnButtonContainer");
     PlayAgainButton.innerHTML = "<div id='finishTurnButtonContainer'><button id='finishTurnButton' class='font1 finishTurnButton'>Play Again?</button></div>";
     PlayAgainButton.addEventListener('click', function(){PlayAgainButtonPress()},false)
@@ -645,7 +636,6 @@ function reRenderCardsGameOver() {
         ResetToNewGame();
     }
 }
-
 
 function GameOverBlack(){
     if (gameState.otherInfo.currentTurn[0] === 'green'){GameOverBlueWins()}
@@ -700,31 +690,6 @@ function makeFinishTurnButtonFlash() {
     setTimeout(flashit, speed*7);
     setTimeout(flashBack, speed*8)
 };
-
-
-//Saves player info to logal storage to make it so they can play another game without going through tutorial or name selection.
-function ResetToNewGame(){    
-    localStorage.setItem('restartOption', "YES");
-    localStorage.setItem('savedPlayerList', JSON.stringify(gameState.playerList));
-    location.reload();
-}
-
-//Determines if restart and starts accordingly
-function main(){
-    let isThisARestart = localStorage.getItem('restartOption');
-    if (isThisARestart === "YES"){
-        let savedPlayerList = JSON.parse(localStorage.getItem('savedPlayerList'));
-        gameState.playerList = savedPlayerList;
-        localStorage.clear();
-        Start(true);
-    } else{
-        localStorage.clear();
-        Start();
-    }
-}
-main()
-
-
 function changeMainBanner(message){
     let mainBannerNew = document.getElementById("TitleText");
     mainBannerNew.innerHTML = message
@@ -749,3 +714,25 @@ function bannerFromTextBox(){
     if (parseInt(gameState.otherInfo.currentGuessAllowance) === 0){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
     if (gameState.otherInfo.turnOver === true){disableTileClickEventListeners();makeFinishTurnButtonFlash()};
 }
+//Saves player info to logal storage to make it so they can play another game without going through tutorial or name selection.
+function ResetToNewGame(){    
+    localStorage.setItem('restartOption', "YES");
+    localStorage.setItem('savedPlayerList', JSON.stringify(gameState.playerList));
+    location.reload();
+}
+
+//Determines if restart and starts accordingly
+function main(){
+    let isThisARestart = localStorage.getItem('restartOption');
+    if (isThisARestart === "YES"){
+        let savedPlayerList = JSON.parse(localStorage.getItem('savedPlayerList'));
+        gameState.playerList = savedPlayerList;
+        localStorage.clear();
+        Start(true);
+    } else{
+        localStorage.clear();
+        Start();
+    }
+}
+main()
+

@@ -350,6 +350,9 @@ table{
     background-repeat: no-repeat;
     height: 200px;
 }
+#nameTextInput{
+    box-shadow: 10px 10px  #2e1c00;
+}
 /*Index page*/
 .indexTitleContainer{
     width: 90%;
@@ -719,8 +722,6 @@ body{margin: 0;padding:0;}
 #inBetweenTurnGoBackButton:hover{
     box-shadow: 5px 5px  #2e1c00;
 }
-
-
 .blueConfetti{
     background-image: url("./GameAssets/BlueConfetti.jpg");
     margin-left: auto;
@@ -736,8 +737,4 @@ body{margin: 0;padding:0;}
     background-repeat: auto;
     background-size:40%;
     background-color: white;
-}
-#preloadConfetti{opacity: 0.000000000005;}
-#nameTextInput{
-    box-shadow: 10px 10px  #2e1c00;
 }
