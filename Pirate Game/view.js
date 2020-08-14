@@ -153,7 +153,7 @@ letAssignmentSixOjbect.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         let tempVarAssign6=this.responseText;
         let jsonGameStateObject = JSON.parse(tempVarAssign6);
-        wordBank=jsonGameStateObject.wordBank;
+        wordBank=jsonGameStateObject.wordBankUnderNineLetters;
         pirateLastNameList = jsonGameStateObject.pirateLastNameList;
         pirateFirstNameList =jsonGameStateObject.pirateFirstNameList;
     }
@@ -334,9 +334,13 @@ function updateAll(){
         if (gameState.otherInfo.currentTurn[0] === 'blue'){
             currentPlayerBackgroundColor.style.backgroundColor = '#3399ff';
             currentPlayerBackgroundColor.style.border ="5px solid #10347c";
+            currentPlayerBackgroundColor.style.boxShadow= "7px 7px #0a214f"
+
         }else if (gameState.otherInfo.currentTurn[0] === 'green'){
             currentPlayerBackgroundColor.style.backgroundColor = '#78b548';
-            currentPlayerBackgroundColor.style.border ="5px solid #1e5631";};
+            currentPlayerBackgroundColor.style.border ="5px solid #1e5631";
+            currentPlayerBackgroundColor.style.boxShadow= "7px 7px #12331d";
+        };
     }
     function reRenderCardsCurrentPlayer() { 
         let renderOrder = gameState.playerList.currentPlayer[1];
@@ -585,10 +589,12 @@ function inBetweenScreenPopupWindow(){
     if (gameState.otherInfo.currentTurn[0] === 'blue'){
         inBetweenTurnGoBackPlayer.style.backgroundColor = '#3399ff';
         inBetweenTurnGoBackPlayer.style.border ="5px solid #10347c";
+        inBetweenTurnGoBackPlayer.style.boxShadow = "5px 5px  #0a214f";
     }
     else if (gameState.otherInfo.currentTurn[0] === 'green'){
         inBetweenTurnGoBackPlayer.style.backgroundColor = '#78b548';
         inBetweenTurnGoBackPlayer.style.border ="5px solid #1e5631";
+        inBetweenTurnGoBackPlayer.style.boxShadow = "5px 5px  #12331d";
     };
     let inBetweenTurnGoBackButton = document.getElementById('inBetweenTurnGoBackButton');
     inBetweenTurnGoBackButton.addEventListener("click", function() {closeInBetweenScreenPopupWindow()}, false);    
@@ -647,6 +653,8 @@ function GameOverGreenWins(){
     turnFinishedBanner.innerHTML = "Game Finished!";
     const finalColor = document.getElementById("currentPlayerNameContainer");
     finalColor.style.backgroundColor="rgb(120, 181, 72)";
+    finalColor.style.borderColor = "#1e5631";
+    finalColor.style.boxShadow= "#12331d 7px 7px";
     changeMainBanner("Green Wins!!!!!")
     let mainBannerNew = document.getElementById("topSection2");
     mainBannerNew.style.backgroundColor = "#78b548";
@@ -660,6 +668,8 @@ function GameOverBlueWins(){
     turnFinishedBanner.innerHTML = "Game Finished!";
     const finalColor = document.getElementById("currentPlayerNameContainer");
     finalColor.style.backgroundColor="rgb(51, 153, 255)";
+    finalColor.style.borderColor = "rgb(16, 52, 124)";
+    finalColor.style.boxShadow= "rgb(10, 33, 79) 7px 7px";
     changeMainBanner("Blue Wins!!!!!")
     let mainBannerNew = document.getElementById("topSection2");
     mainBannerNew.style.backgroundColor = "#3399ff";

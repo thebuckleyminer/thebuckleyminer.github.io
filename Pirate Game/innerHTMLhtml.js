@@ -11,8 +11,8 @@ const TutorialPageOne = `
                 </div>
             </div>
             <div class="UniversalNextButtonContainer">
-                <button id="Page1Yes" class="UniversalNextButton fontTypeTwo">Yes</button>
-                <button id="Page1No" class="UniversalNextButton fontTypeTwo">No</button>
+                <button id="Page1Yes" class="UniversalNextButton fontTypeOne">Yes</button>
+                <button id="Page1No" class="UniversalNextButton fontTypeOne">No</button>
             </div>
         </div>`
 
